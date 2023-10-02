@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+	<link rel="icon" href="../static/images/favicon-32x32.png" type="image/png" />
+	<!--plugins-->
+	<link href="../static/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="../static/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="../static/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<!-- loader-->
+	<link href="../static/css/pace.min.css" rel="stylesheet" />
+	<script src="../static/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<link href="../static/css/app.css" rel="stylesheet">
+	<link href="../static/css/icons.css" rel="stylesheet">
+	<!-- Theme Style CSS -->
+	<link rel="stylesheet" href="../static/css/dark-theme.css" />
+	<link rel="stylesheet" href="../static/css/semi-dark.css" />
+	<link rel="stylesheet" href="../static/css/header-colors.css" />
+	<title>Лексан</title>
+</head>
+
+<body>
+	<!--wrapper-->
+	<div class="wrapper">
+		<!--sidebar wrapper -->
+		<div class="sidebar-wrapper" data-simplebar="true">
+			<div class="sidebar-header">
+<div>
+					<img src="../static/images/logo-icon.png" class="logo-icon" alt="logo icon">
+				</div>
+				<div>
+					<h4 class="logo-text">Лексан</h4>
+				</div>
+				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+				</div>
+			</div>
+			<ul class="metismenu" id="menu">
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-home-circle'></i>
+						</div>
+						<div class="menu-title">Дашборд</div>
+					</a>
+					<ul>
+						<li> <a href="/general_dashboard_sales/"><i class="bx bx-right-arrow-alt"></i>Общие продажи</a>
+						</li>
+						<li> <a href="/sales_by_managers/"><i class="bx bx-right-arrow-alt"></i>Продажи по менеджерам</a>
+						</li>
+						<li> <a href="/reverse/"><i class="bx bx-right-arrow-alt"></i>Возвраты</a>
+						</li>
+						<li> <a href="/1"><i class="bx bx-right-arrow-alt"></i>Самые продаваемые товары</a>
+						</li>
+						<li> <a href="/2"><i class="bx bx-right-arrow-alt"></i>Активность обновления поставщиков</a>
+						</li>
+						<li> <a href="/3"><i class="bx bx-right-arrow-alt"></i>Обработанные товары/необработанные</a>
+						</li>
+						<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Продажи по маркетам</div>
+					</a>
+					<ul>
+						<li> <a href="/ozon"><i class="bx bx-right-arrow-alt"></i>OZON</a>
+						</li>
+						<li> <a href="/yandex_market"><i class="bx bx-right-arrow-alt"></i>Yandex Market</a>
+						</li>
+					</ul>
+				</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cart'></i>
+						</div>
+						<div class="menu-title">Заказы</div>
+					</a>
+					<ul>
+						<li> <a href="/orders"><i class="bx bx-right-arrow-alt"></i>Список заказов</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cart'></i>
+						</div>
+						<div class="menu-title">Заказы маркетплейсов</div>
+					</a>
+					<ul>
+						<li> <a href="/ym_orders"><i class="bx bx-right-arrow-alt"></i>Яндекс Маркет Boint FBS</a>
+						</li>
+						<li> <a href="/ozon_orders?client_id=258"><i class="bx bx-right-arrow-alt"></i>OZON МГТ FBS</a>
+						</li>
+						<li> <a href="/ozon_orders?client_id=12712"><i class="bx bx-right-arrow-alt"></i>OZON КГТ FBS</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-receipt'></i>
+						</div>
+						<div class="menu-title">Товары</div>
+					</a>
+					<ul>
+						<li> <a href="/items/statistics?site={{ site }}"><i class="bx bx-right-arrow-alt"></i>Статистика последнего импорта товаров</a>
+						</li>
+						<li> <a href="/items?site={{ site }}"><i class="bx bx-right-arrow-alt"></i>Товары</a>
+						</li>
+						<li> <a href="/wildberries_items"><i class="bx bx-right-arrow-alt"></i>Товары "Wildberries"</a>
+						</li>
+						<li> <a href="/vendor_items"><i class="bx bx-right-arrow-alt"></i>Необработанные товары</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cube'></i>
+						</div>
+						<div class="menu-title">Поставщики</div>
+					</a>
+					<ul>
+						<li> <a href="/vendors"><i class="bx bx-right-arrow-alt"></i>Список поставщиков</a>
+						</li>
+
+					</ul>
+				</li>
+						<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Импорт товаров поставщиков</div>
+					</a>
+					<ul>
+						<li> <a href="/modules"><i class="bx bx-right-arrow-alt"></i>Список интеграций</a>
+						</li>
+						<li> <a href="/modules/profiles"><i class="bx bx-right-arrow-alt"></i>Профили экспорта "Озон"</a>
+						</li>
+						<li> <a href="/modules/ym_profiles"><i class="bx bx-right-arrow-alt"></i>Профили экспорта "YandexMarket"</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Сборка заказов</div>
+					</a>
+					<ul>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--end sidebar wrapper -->
+		<!--start header -->
+<header>
+			<div class="topbar d-flex align-items-center">
+				<nav class="navbar navbar-expand">
+					<div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
+					</div>
+					<div class="search-bar flex-grow-1">
+						<div class="position-relative search-bar-box">
+						</div>
+					</div>
+					<div class="top-menu ms-auto">
+						<ul class="navbar-nav align-items-center">
+							<li class="nav-item mobile-search-icon">
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<div class="dropdown-menu dropdown-menu-end">
+									<div class="row row-cols-3 g-3 p-3">
+										
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<div class="dropdown-menu dropdown-menu-end">
+									<div class="header-notifications-list">
+										
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									 <i class='bx bx-user'></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end">
+									<a href="javascript:;">
+										<div class="msg-header">
+											<p class="msg-header-title"></p>
+											<p class="msg-header-clear ms-auto"></p>
+										</div>
+									</a>
+									<div class="header-message-list">
+
+
+									</div>
+									<a href="javascript:;">
+										<div class="text-center msg-footer"><a href="">Выход</a></div>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+</header>
+		<!--end header -->
+		<!--start page wrapper -->
+		<div class="page-wrapper">
+			<div class="page-content">
+				<!--breadcrumb-->
+				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+					<div class="breadcrumb-title pe-3">Графики</div>
+					<div class="ps-3">
+<p class="primer1">{{ error}}</p>
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb mb-0 p-0">
+								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Сумма продаж по менеджерам</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<!--end breadcrumb-->
+				<div class="card">
+						<div class="card-body">
+							<div class="input-group">
+								<div class="form-check form-switch">
+									<label for="select" class="control-label col-xs-3">День</label>
+									<input class="form-check-input" type="checkbox" autocomplete="off" name="select" id="cb" onchange='showOrHide("cb", "cb1", "cb2", "cat", "cat1", "cat2");'></div>
+								<div class="form-check form-switch">
+									<label class="control-label col-xs-3">   </label>
+								</div>
+								<div class="form-check form-switch">
+									<label for="select2" class="control-label col-xs-3">Месяц</label>
+									<input class="form-check-input" type="checkbox" autocomplete="off" name="select2" id="cb1" onchange='showOrHide("cb1", "cb", "cb2", "cat1", "cat", "cat2");'>
+								</div>
+								<div class="form-check form-switch">
+									<label class="control-label col-xs-3">   </label>
+								</div>
+								<div class="form-check form-switch">
+									<label for="select3" class="control-label col-xs-3">За всё время</label>
+									<input class="form-check-input" type="checkbox" autocomplete="off" name="select3" id="cb2" onchange='showOrHide("cb2", "cb1", "cb", "cat2", "cat", "cat1");'>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div id="cat" class="deactive" style="display: none;">
+					<div class="row">
+						<div class="col-xl-9 mx-auto">
+							<div class="card">
+								<div class="card-body">
+									<div id="chart1"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="cat1" class="deactive" style="display: none;">
+					<div class="row">
+						<div class="col-xl-9 mx-auto">
+							<div class="card">
+								<div class="card-body">
+									<div id="chart10"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="cat2" class="deactive" style="display: none;">
+					<div class="row">
+						<div class="col-xl-9 mx-auto">
+							<div class="card">
+								<div class="card-body">
+									<div id="chart11"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--end row-->
+			</div>
+		</div>
+		<!--end page wrapper -->
+		<!--start overlay-->
+		<div class="overlay toggle-icon"></div>
+		<!--end overlay-->
+		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+		<!--End Back To Top Button-->
+		<footer class="page-footer">
+			<p class="mb-0">Copyright © 2022. All right reserved.</p>
+		</footer>
+	</div>
+	<!--end wrapper-->
+	<!--start switcher-->
+
+	<!--end switcher-->
+	<style>
+	.primer1{ 
+	color: #FF00AA;
+	}
+</style>
+	<!-- Bootstrap JS -->
+	<script src="../static/js/bootstrap.bundle.min.js"></script>
+	<!--plugins-->
+	<script src="../static/js/jquery.min.js"></script>
+	<script src="../static/plugins/simplebar/js/simplebar.min.js"></script>
+	<script src="../static/plugins/metismenu/js/metisMenu.min.js"></script>
+	<script src="../static/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<!-- highcharts js -->
+	<script src="../static/plugins/highcharts/js/highcharts.js"></script>
+	<script src="../static/plugins/highcharts/js/highcharts-more.js"></script>
+	<script src="../static/plugins/highcharts/js/variable-pie.js"></script>
+	<script src="../static/plugins/highcharts/js/solid-gauge.js"></script>
+	<script src="../static/plugins/highcharts/js/highcharts-3d.js"></script>
+	<script src="../static/plugins/highcharts/js/cylinder.js"></script>
+	<script src="../static/plugins/highcharts/js/funnel3d.js"></script>
+	<script src="../static/plugins/highcharts/js/exporting.js"></script>
+	<script src="../static/plugins/highcharts/js/export-data.js"></script>
+	<script src="../static/plugins/highcharts/js/accessibility.js"></script>
+	<script>
+	$(function () {
+	"use strict";
+	// chart 10
+	// Create the chart
+	Highcharts.chart('chart1', {
+		chart: {
+			type: 'column',
+			styledMode: false
+		},
+		credits: {
+			enabled: false
+		},
+		title: {
+			text: 'Cумма продаж по менеджерам на {{ date }}'
+		},
+		accessibility: {
+			announceNewData: {
+				enabled: true
+			}
+		},
+		xAxis: {
+			type: 'category'
+		},
+		yAxis: {
+			title: {
+				text: 'Сумма продаж'
+			}
+		},
+		legend: {
+			enabled: false
+		},
+		plotOptions: {
+			series: {
+				borderWidth: 0,
+				dataLabels: {
+					enabled: true,
+					format: '{point.y}'
+				}
+			}
+		},
+		tooltip: {
+			headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+			pointFormat: '<span style="color:{point.color}">{point.name}</span>: на сумму <b>{point.y}</b> рублей<br/>'
+		},
+		series: [{
+			name: "Продажи",
+			colorByPoint: true,
+			data: [
+			{% for data in sum_cast1 %}
+			{
+				name: '{{ data[0] }}',
+				y: {{ data[1] }}
+			},
+			{% endfor %}
+		]
+	}]
+});
+Highcharts.chart('chart10', {
+		chart: {
+			type: 'column',
+			styledMode: false
+		},
+		credits: {
+			enabled: false
+		},
+		title: {
+			text: 'Cумма продаж по менеджерам за {{ mount }} '
+		},
+		accessibility: {
+			announceNewData: {
+				enabled: true
+			}
+		},
+		xAxis: {
+			type: 'category'
+		},
+		yAxis: {
+			title: {
+				text: 'Сумма продаж'
+			}
+		},
+		legend: {
+			enabled: false
+		},
+		plotOptions: {
+			series: {
+				borderWidth: 0,
+				dataLabels: {
+					enabled: true,
+					format: '{point.y}'
+				}
+			}
+		},
+		tooltip: {
+			headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+			pointFormat: '<span style="color:{point.color}">{point.name}</span>: на сумму <b>{point.y}</b> рублей<br/>'
+		},
+		series: [{
+			name: "Продажи",
+			colorByPoint: true,
+			data: [
+			{% for data in sum_cast %}
+			{
+				name: '{{ data[0] }}',
+				y: {{ data[1] }}
+			},
+			{% endfor %}
+		]
+	}]
+});
+Highcharts.chart('chart11', {
+		chart: {
+			type: 'column',
+			styledMode: false
+		},
+		credits: {
+			enabled: false
+		},
+		title: {
+			text: 'Cумма продаж по менеджерам'
+		},
+		accessibility: {
+			announceNewData: {
+				enabled: true
+			}
+		},
+		xAxis: {
+			type: 'category'
+		},
+		yAxis: {
+			title: {
+				text: 'Сумма продаж'
+			}
+		},
+		legend: {
+			enabled: false
+		},
+		plotOptions: {
+			series: {
+				borderWidth: 0,
+				dataLabels: {
+					enabled: true,
+					format: '{point.y}'
+				}
+			}
+		},
+		tooltip: {
+			headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+			pointFormat: '<span style="color:{point.color}">{point.name}</span>: на сумму <b>{point.y}</b> рублей<br/>'
+		},
+		series: [{
+			name: "Продажи",
+			colorByPoint: true,
+			data: [
+			{% for data in sum_cast_all %}
+			{
+				name: '{{ data[0] }}',
+				y: {{ data[1] }}
+			},
+			{% endfor %}
+		]
+	}]
+});
+});
+function showOrHide(cb, cb1, cb2, cat, cat1, cat2) {
+    cb = document.getElementById(cb);
+    cb1 = document.getElementById(cb1);
+    cb2 = document.getElementById(cb2);
+    cat = document.getElementById(cat);
+    cat1 = document.getElementById(cat1);
+    cat2 = document.getElementById(cat2);
+    if (cb.checked) {
+      cat.style.display = "block";
+      cat1.style.display = "none";
+      cat2.style.display = "none";
+      cb1.checked = false
+      cb2.checked = false
+    }
+    else {
+      cat.style.display = "none";
+      cat1.style.display = "none";
+      cat2.style.display = "none";
+    }
+  }
+	</script>
+	<!--app JS-->
+	<script src="../static/js/app.js"></script>
+</body>
+
+</html>

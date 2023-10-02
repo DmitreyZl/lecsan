@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+	<link rel="icon" href="../static/images/favicon-32x32.png" type="image/png" />
+	<!--plugins-->
+	<link href="../static/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="../static/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="../static/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<!-- loader-->
+	<link href="../static/css/pace.min.css" rel="stylesheet" />
+	<script src="../static/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/select/1.4.0/css/select.dataTables.min.css" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<link href="../static/css/app.css" rel="stylesheet">
+	<link href="../static/css/icons.css" rel="stylesheet">
+	<!-- Theme Style CSS -->
+	<link rel="stylesheet" href="../static/css/dark-theme.css" />
+	<link rel="stylesheet" href="../static/css/semi-dark.css" />
+	<link rel="stylesheet" href="../static/css/header-colors.css" />
+
+	<title>Лексан</title>
+</head>
+
+<body>
+	<!--wrapper-->
+		<div class="wrapper">
+		<!--sidebar wrapper -->
+		<div class="sidebar-wrapper" data-simplebar="true">
+			<div class="sidebar-header">
+<div>
+					<img src="../static/images/logo-icon.png" class="logo-icon" alt="logo icon">
+				</div>
+				<div>
+					<h4 class="logo-text">Лексан</h4>
+				</div>
+				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+				</div>
+			</div>
+			<ul class="metismenu" id="menu">
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-home-circle'></i>
+						</div>
+						<div class="menu-title">Графики</div>
+					</a>
+					<ul>
+						<li> <a href="/"><i class="bx bx-right-arrow-alt"></i>Общий</a>
+						</li>
+						<li> <a href="/charts/managers"><i class="bx bx-right-arrow-alt"></i>Сумма продаж по менеджерам</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-user-circle'></i>
+						</div>
+						<div class="menu-title">Пользователи</div>
+					</a>
+					<ul>
+						<li> <a href="/users"><i class="bx bx-right-arrow-alt"></i>Список пользователей</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cart'></i>
+						</div>
+						<div class="menu-title">Заказы</div>
+					</a>
+					<ul>
+						<li> <a href="/orders"><i class="bx bx-right-arrow-alt"></i>Список заказов</a>
+						</li>
+						<li> <a href="/orders/managers"><i class="bx bx-right-arrow-alt"></i>Менеджеры</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cart'></i>
+						</div>
+						<div class="menu-title">Заказы маркетплейсов</div>
+					</a>
+					<ul>
+						<li> <a href="/ym_orders"><i class="bx bx-right-arrow-alt"></i>Яндекс Маркет Boint FBS</a>
+						</li>
+						<li> <a href="/ozon_orders?client_id=258"><i class="bx bx-right-arrow-alt"></i>OZON МГТ FBS</a>
+						</li>
+						<li> <a href="/ozon_orders?client_id=12712"><i class="bx bx-right-arrow-alt"></i>OZON КГТ FBS</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-receipt'></i>
+						</div>
+						<div class="menu-title">Товары</div>
+					</a>
+					<ul>
+						<li> <a href="/items"><i class="bx bx-right-arrow-alt"></i>Товары "Технолайн"</a>
+						</li>
+						<li> <a href="/items?site=boint"><i class="bx bx-right-arrow-alt"></i>Товары "Boint"</a>
+						</li>
+						<li> <a href="/items?site=maunfeld.spb"><i class="bx bx-right-arrow-alt"></i>Товары "Maunfeld.spb"</a>
+						</li>
+						<li> <a href="/wildberries_items"><i class="bx bx-right-arrow-alt"></i>Товары "Wildberries"</a>
+						</li>
+						<li> <a href="/vendor_items"><i class="bx bx-right-arrow-alt"></i>Нераспознанные товары</a>
+						</li>
+						<li> <a href="/check_parsel_market"><i class="bx bx-right-arrow-alt"></i>Проверка выгруженных товаров</a>
+						</li>
+<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='lni lni-offer'></i>
+						</div>
+						<div class="menu-title">Уценка</div>
+					</a>
+					<ul>
+						<li> <a href="/sale/items"><i class="bx bx-right-arrow-alt"></i>Товары уценка "Технолайн"</a>
+						</li>
+						<li> <a href="/sale/items?site=boint"><i class="bx bx-right-arrow-alt"></i>Товары уценка "Boint"</a>
+						</li>
+						<li> <a href="/sale/items?site=maunfeld.spb"><i class="bx bx-right-arrow-alt"></i>Товары уценка "Maunfeld.spb"</a>
+						</li>
+						<li> <a href="/sale/items/maunfeld"><i class="bx bx-right-arrow-alt"></i>Нераспознанные товары "Maunfeld"</a>
+						</li>
+						<li> <a href="/sale/items/sklad"><i class="bx bx-right-arrow-alt"></i>Нераспознанные товары "Склад"</a>
+						</li>
+						<li> <a href="/items/sale_rule"><i class="bx bx-right-arrow-alt"></i>Ценообразование</a>
+						</li>
+					</ul>
+</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='lni lni-offer'></i>
+						</div>
+						<div class="menu-title">База уценок</div>
+					</a>
+					<ul>
+						<li> <a href="/base/sale"><i class="bx bx-right-arrow-alt"></i>Список уценок со складов</a>
+						</li>
+						<li> <a href="/base/sold"><i class="bx bx-right-arrow-alt"></i>Список проданных уценок со складов</a>
+						</li>
+						<li> <a href="/base/sale/uploads"><i class="bx bx-right-arrow-alt"></i>Выгрузка базы уценок</a>
+						</li>
+						<li> <a href="/base/sale/binding"><i class="bx bx-right-arrow-alt"></i>Привязка уценок к товарам на сайте</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-receipt'></i>
+						</div>
+						<div class="menu-title">База номенклатуры</div>
+					</a>
+					<ul>
+						<li> <a href="/nomenclatures"><i class="bx bx-right-arrow-alt"></i>Не обработанные</a>
+						</li>
+						<li> <a href="/active_nomenclatures"><i class="bx bx-right-arrow-alt"></i>Активные</a>
+						</li>
+						<li> <a href="/hidden_nomenclatures"><i class="bx bx-right-arrow-alt"></i>Скрытые</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-map-alt'></i>
+						</div>
+						<div class="menu-title">Доставки</div>
+					</a>
+					<ul>
+						<li> <a href="/delivery"><i class="bx bx-right-arrow-alt"></i>Календарь</a>
+						</li>
+						<li> <a href="/delivery/drivers"><i class="bx bx-right-arrow-alt"></i>Водители</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-file'></i>
+						</div>
+						<div class="menu-title">Отчёты</div>
+					</a>
+					<ul>
+						<li> <a href="/reports"><i class="bx bx-right-arrow-alt"></i>Отчёт по продажам</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cube'></i>
+						</div>
+						<div class="menu-title">Поставщики</div>
+					</a>
+					<ul>
+						<li> <a href="/vendors"><i class="bx bx-right-arrow-alt"></i>Список поставщиков</a>
+						</li>
+										<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Импорт товаров поставщиков</div>
+					</a>
+					<ul>
+						<li> <a href="/imports_elko_category"><i class="bx bx-right-arrow-alt"></i>Товары Elko</a>
+						</li>
+					</ul>
+				</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-globe'></i>
+						</div>
+						<div class="menu-title">Модули</div>
+					</a>
+					<ul>
+						<li> <a href="/modules"><i class="bx bx-right-arrow-alt"></i>Список интеграций</a>
+						</li>
+						<li> <a href="/modules/profiles"><i class="bx bx-right-arrow-alt"></i>Профили экспорта "Озон"</a>
+						</li>
+						<li> <a href="/modules/ym_profiles"><i class="bx bx-right-arrow-alt"></i>Профили экспорта "YandexMarket"</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-receipt'></i>
+						</div>
+						<div class="menu-title">Прайсы</div>
+					</a>
+					<ul>
+						<li> <a href="/price_list"><i class="bx bx-right-arrow-alt"></i>Основной прайс</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--end sidebar wrapper -->
+		<!--start header -->
+<header>
+			<div class="topbar d-flex align-items-center">
+				<nav class="navbar navbar-expand">
+					<div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
+					</div>
+					<div class="search-bar flex-grow-1">
+						<div class="position-relative search-bar-box">
+						</div>
+					</div>
+					<div class="top-menu ms-auto">
+						<ul class="navbar-nav align-items-center">
+							<li class="nav-item mobile-search-icon">
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<div class="dropdown-menu dropdown-menu-end">
+									<div class="row row-cols-3 g-3 p-3">
+										
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<div class="dropdown-menu dropdown-menu-end">
+									<div class="header-notifications-list">
+										
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									 <i class='bx bx-user'></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end">
+									<a href="javascript:;">
+										<div class="msg-header">
+											<p class="msg-header-title"></p>
+											<p class="msg-header-clear ms-auto"></p>
+										</div>
+									</a>
+									<div class="header-message-list">
+
+
+									</div>
+									<a href="javascript:;">
+										<div class="text-center msg-footer"><a href="">Выход</a></div>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+</header>
+		<!--end header -->
+		<!--start page wrapper -->
+		<div class="page-wrapper">
+			<div class="page-content">
+				<!--breadcrumb-->
+				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+					<div class="breadcrumb-title pe-3">Заказы</div>
+					<div class="ps-3">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb mb-0 p-0">
+								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Заказ {{ num }}</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<!--end breadcrumb-->
+				<div class="row">
+	
+						<h6 class="mb-0 text-uppercase">Заказ {{ num }}</h6>
+						<hr/>
+								<table id="example" class="table table-striped table-bordered" style="width:100%">
+									<thead>
+										<tr>
+											<th scope="col">Дата</th>
+											<th scope="col">Статус</th>
+											<th scope="col">Статус обработки</th>
+											<th scope="col">Сумма комиссий</th>
+											<th scope="col">Сумма</th>
+										</tr>
+									</thead>
+									<tbody>
+									{% for d in dr %}
+										<tr>
+											<td>{{ d['date']|replace("T", " ")|replace("Z", "") }}</td>
+											<td>{{ d['status'] }}</td>
+											<td>{{ d['substatus'] }}</td>
+											<td>{{ d['commission_amount']|float|round(2, 'common') }}</td>
+											<td>{{ d['total']|float|round(2, 'common') }}</td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table>
+	
+				</div>
+				</br></br></br>
+				<div class="row">
+						<h6 class="mb-0 text-uppercase"></br>Товары</h6>
+						<hr/>
+								<table id="example1" class="table table-striped table-bordered" style="width:100%">
+									<thead>
+										<tr>
+											<th scope="col">SKU</th>
+											<th scope="col">Название</th>
+											<th scope="col">Количество</th>
+											<th scope="col">Цена</th>
+										</tr>
+									</thead>
+									<tbody>
+									{% for d in items %}
+										<tr>
+											<td>{{ d['offer_id'] }}</td>
+											<th>{{ d['name'] }}</th>
+											<td>{{ d['quantity'] }}</td>
+											<td>{{ d['price']|float|round(2, 'common') }}</td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table>
+				</div>
+</br></br>
+								<div class="row">
+</br></br>
+						<h6 class="mb-0 text-uppercase"></br>Комиссии</h6>
+						<hr/>
+								<table id="example7" class="table table-striped table-bordered" style="width:100%">
+									<thead>
+										<tr>
+											<th scope="col">Тип комиссии</th>
+											<th scope="col">Сумма комиссии</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Компенсации</td>
+											<th>{{ commissions['compensation_amount'] }}</th>
+										</tr>
+										<tr>
+											<td>Начисления за доставку и возвраты</td>
+											<th>{{ commissions['money_transfer'] }}</th>
+										</tr>
+										<tr>
+											<td>Прочие начисления</td>
+											<th>{{ commissions['others_amount'] }}</th>
+										</tr>
+										<tr>
+											<td>Стоимость услуг обработки отправлений, сборки заказов</td>
+											<th>{{ commissions['processing_and_delivery'] }}</th>
+										</tr>
+										<tr>
+											<td>Стоимость обратной магистрали, обработки возвратов, отмен</td>
+											<th>{{ commissions['refunds_and_cancellations'] }}</th>
+										</tr>
+										<tr>
+											<td>Сумма комиссии, которая была удержана при продаже товара</td>
+											<th>{{ commissions['sale_commission'] }}</th>
+										</tr>
+										<tr>
+											<td>Стоимость дополнительных услуг</td>
+											<th>{{ commissions['services_amount'] }}</th>
+										</tr>
+									</tbody>
+								</table>
+				</div>
+</br></br>
+				<div class="row">
+
+						<h6 class="mb-0 text-uppercase">Доставки</h6>
+						<hr/>
+								<table id = 'qualifications' class="table table-striped table-bordered" style="width:100%">
+									<thead>
+										<tr>
+											<th scope="col">Название службы доставки</th>
+											<th scope="col">Тип доставки</th>
+											<th scope="col">Регион</th>
+											<th scope="col">Дата</th>
+											<th scope="col">Стоимость доставки</th>
+										</tr>
+									</thead>
+									<tbody>
+									{% for d in delivery %}
+										<tr>
+											<td>{{ d['name'] }}</td>
+											<th>{{ d['tpl_provider'] }}</th>
+											<td>{{ d['city'] }}</td>
+											{% if 'delivering_date' in d %}
+											<td>{{ d['delivering_date']|replace("T", " ")|replace("Z", "") }}</td>
+											{% else %}
+											<td> - </td>
+											{% endif %}
+											<td>{{ commissions['money_transfer'] }}</td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table>
+				</div>
+</br></br></br>
+
+		<!--end page wrapper -->
+		<!--start overlay-->
+		<div class="overlay toggle-icon"></div>
+		<!--end overlay-->
+		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+		<!--End Back To Top Button-->
+		<footer class="page-footer">
+			<p class="mb-0">Copyright © 2023. All right reserved.</p>
+		</footer>
+	</div>
+	<!--end wrapper-->
+
+<!-- Bootstrap JS -->
+<style>
+	.is-open-modal {
+	overflow: hidden;
+}
+.modal {
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 1000;
+	background: rgba(0,0,0, 0.7);
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding: 3rem;
+	display: none;
+}
+.modal.is-open {
+	display: block;
+}
+
+
+.dialog {
+	box-sizing: border-box;
+	width: 70%;
+	max-width: 100%;
+	background: #fff;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 5px;
+	padding: 1rem;
+}
+</style>
+	<script src="../static/js/bootstrap.bundle.min.js"></script>
+	<script src="../static/js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" media="all" >
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--plugins-->
+	<script src="../static/js/jquery.min.js"></script>
+	<script src="../static/plugins/simplebar/js/simplebar.min.js"></script>
+	<script src="../static/plugins/fullcalendar/js/main.min.js"></script>
+	<script src="../static/plugins/metismenu/js/metisMenu.min.js"></script>
+	<script src="../static/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<script src="../static/js/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+
+    <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
+		<script src="../static/plugins/metismenu/js/metisMenu.min.js"></script>
+
+	<script>
+	function showModal(id){
+		$(document.body).addClass('is-open-modal');
+		$(id).addClass('is-open');
+	}
+	function hideModals(){
+		$(document.body).removeClass('is-open-modal');
+		$('.modal').removeClass('is-open');
+	}
+
+$(document).click(function (e) {
+    if ($(e.target).is('.modal')) {
+          hideModals();
+    }
+});
+
+
+//initialize DataTable
+
+	var table = $('#example1').DataTable( {
+				order: [[ 1, 'asc' ]],
+"pageLength" : 25,
+			} );
+	var table7 = $('#example7').DataTable( {
+				order: [[ 1, 'asc' ]],
+"pageLength" : 25,
+			} );
+
+	var tableOrder = $('#example').DataTable( {
+				        paging: false,
+        bFilter: false,
+        ordering: false,
+        searching: true,
+        dom: 't',         // This shows just the table
+				order: [[ 1, 'desc' ]]
+			} );
+
+	var tableDelivery = $('#qualifications').DataTable( {
+				        paging: false,
+        bFilter: false,
+        ordering: false,
+        searching: true,
+        dom: 't',         // This shows just the table
+				order: [[ 1, 'desc' ]]
+			} );
+
+	</script>
+	<!--app JS-->
+	<script src="../../static/js/app.js"></script>
+</body>
+
+</html>

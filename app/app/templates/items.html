@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+	<link rel="icon" href="../static/images/favicon-32x32.png" type="image/png" />
+	<!--plugins-->
+	<link href="../static/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="../static/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="../static/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<!-- loader-->
+	<link href="../static/css/pace.min.css" rel="stylesheet" />
+	<script src="../static/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/select/1.4.0/css/select.dataTables.min.css" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<link href="../static/css/app.css" rel="stylesheet">
+	<link href="../static/css/icons.css" rel="stylesheet">
+	<!-- Theme Style CSS -->
+	<link rel="stylesheet" href="../static/css/dark-theme.css" />
+	<link rel="stylesheet" href="../static/css/semi-dark.css" />
+	<link rel="stylesheet" href="../static/css/header-colors.css" />
+
+	<title>Лексан</title>
+</head>
+
+<body>
+	<!--wrapper-->
+		<div class="wrapper">
+		<!--sidebar wrapper -->
+		<div class="sidebar-wrapper" data-simplebar="true">
+			<div class="sidebar-header">
+<div>
+					<img src="../static/images/logo-icon.png" class="logo-icon" alt="logo icon">
+				</div>
+				<div>
+					<h4 class="logo-text">Лексан</h4>
+				</div>
+				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+				</div>
+			</div>
+			<ul class="metismenu" id="menu">
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-home-circle'></i>
+						</div>
+						<div class="menu-title">Дашборд</div>
+					</a>
+					<ul>
+						<li> <a href="/general_dashboard_sales/"><i class="bx bx-right-arrow-alt"></i>Общие продажи</a>
+						</li>
+						<li> <a href="/sales_by_managers/"><i class="bx bx-right-arrow-alt"></i>Продажи по менеджерам</a>
+						</li>
+						<li> <a href="/reverse/"><i class="bx bx-right-arrow-alt"></i>Возвраты</a>
+						</li>
+						<li> <a href="/1"><i class="bx bx-right-arrow-alt"></i>Самые продаваемые товары</a>
+						</li>
+						<li> <a href="/2"><i class="bx bx-right-arrow-alt"></i>Активность обновления поставщиков</a>
+						</li>
+						<li> <a href="/3"><i class="bx bx-right-arrow-alt"></i>Обработанные товары/необработанные</a>
+						</li>
+						<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Продажи по маркетам</div>
+					</a>
+					<ul>
+						<li> <a href="/ozon"><i class="bx bx-right-arrow-alt"></i>OZON</a>
+						</li>
+						<li> <a href="/yandex_market"><i class="bx bx-right-arrow-alt"></i>Yandex Market</a>
+						</li>
+					</ul>
+				</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cart'></i>
+						</div>
+						<div class="menu-title">Заказы</div>
+					</a>
+					<ul>
+						<li> <a href="/orders"><i class="bx bx-right-arrow-alt"></i>Список заказов</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cart'></i>
+						</div>
+						<div class="menu-title">Заказы маркетплейсов</div>
+					</a>
+					<ul>
+						<li> <a href="/ym_orders"><i class="bx bx-right-arrow-alt"></i>Яндекс Маркет Boint FBS</a>
+						</li>
+						<li> <a href="/ozon_orders?client_id=258"><i class="bx bx-right-arrow-alt"></i>OZON МГТ FBS</a>
+						</li>
+						<li> <a href="/ozon_orders?client_id=12712"><i class="bx bx-right-arrow-alt"></i>OZON КГТ FBS</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-receipt'></i>
+						</div>
+						<div class="menu-title">Товары</div>
+					</a>
+					<ul>
+						<li> <a href="/items/statistics?site={{ site }}"><i class="bx bx-right-arrow-alt"></i>Статистика последнего импорта товаров</a>
+						</li>
+						<li> <a href="/items?site={{ site }}"><i class="bx bx-right-arrow-alt"></i>Товары</a>
+						</li>
+						<li> <a href="/wildberries_items"><i class="bx bx-right-arrow-alt"></i>Товары "Wildberries"</a>
+						</li>
+						<li> <a href="/vendor_items"><i class="bx bx-right-arrow-alt"></i>Необработанные товары</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cube'></i>
+						</div>
+						<div class="menu-title">Поставщики</div>
+					</a>
+					<ul>
+						<li> <a href="/vendors"><i class="bx bx-right-arrow-alt"></i>Список поставщиков</a>
+						</li>
+
+					</ul>
+				</li>
+						<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Импорт товаров поставщиков</div>
+					</a>
+					<ul>
+						<li> <a href="/modules"><i class="bx bx-right-arrow-alt"></i>Список интеграций</a>
+						</li>
+						<li> <a href="/modules/profiles"><i class="bx bx-right-arrow-alt"></i>Профили экспорта "Озон"</a>
+						</li>
+						<li> <a href="/modules/ym_profiles"><i class="bx bx-right-arrow-alt"></i>Профили экспорта "YandexMarket"</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Сборка заказов</div>
+					</a>
+					<ul>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--end sidebar wrapper -->
+		<!--start header -->
+<header>
+				<div class="topbar d-flex align-items-center">
+				<nav class="navbar navbar-expand">
+					<div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
+					</div>
+					<div class="search-bar flex-grow-1">
+						<div class="position-relative search-bar-box">
+						</div>
+					</div>
+					<div class="top-menu ms-auto">
+						<ul class="navbar-nav align-items-center">
+							<li class="nav-item mobile-search-icon">
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<div class="dropdown-menu dropdown-menu-end">
+									<div class="row row-cols-3 g-3 p-3">
+
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<div class="dropdown-menu dropdown-menu-end">
+									<div class="header-notifications-list">
+
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									 <i class='bx bx-globe'>{{ site }}</i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end">
+<a href="javascript:;">
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/user"></a></p>
+											<p class="msg-header-clear ms-auto"></p>
+										</div>
+</a>
+									<div class="header-message-list">
+
+										<div class="msg-header">
+											<p class="msg-header-title">Выберите сайт: </p>
+										</div>
+{% if site =='boint' %}
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/items">Технолайн</a></p>
+										</div>
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/items?site=maunfeld.spb">Maunfeld.Spb</a></p>
+										</div>
+{% elif site =='maunfeld.spb' %}
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/items">Технолайн</a></p>
+										</div>
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/items?site=boint">Boint</a></p>
+										</div>
+{% else %}
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/items?site=maunfeld.spb">Maunfeld.Spb</a></p>
+										</div>
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/items?site=boint">Boint</a></p>
+										</div>
+{% endif %}
+
+									</div>
+									<a href="javascript:;">
+									<div class="text-center msg-footer"><a href="">Выход</a></div>
+</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+</header>
+		<!--end header -->
+		<!--start page wrapper -->
+		<div class="page-wrapper" id = "reload">
+			<div class="page-content">
+				<!--breadcrumb-->
+				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+					<div class="breadcrumb-title pe-3">Товары</div>
+					<div class="ps-3">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb mb-0 p-0">
+								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Товары "{{ site }}"</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				</br>
+				<button id="submit" class="btn btn-primary"><i class="lni lni-reload"></i> <div class="toFill"> Обновить</div></button>
+
+				<!--end breadcrumb-->
+				</br></br>
+				<table align="center" class="table table-striped table-bordered" style="width:100%">
+					<tbody>
+						<thead>
+							<tr>
+								<th scope="col">ID_сайт</th>
+								<th scope="col">Поставщик</th>
+								<th scope="col">Производитель</th>
+								<th scope="col">Категории</th>
+								<th scope="col">Название</th>
+								<th scope="col">Артикул</th>
+								<th scope="col">Цена</th>
+								<th scope="col">Количество</th>
+								<th scope="col">Статус</th>
+							</tr>
+						</thead>
+						<tr>
+
+{% if id_item == '-' %}
+							<th><input class="userForm" type="text" id="search_id" placeholder="Поиск..." oninput="handleValueChange()"></th>
+{% else %}
+							<th><input class="userForm" type="text" value='{{ id_item }}' id="search_id" placeholder="Поиск..." oninput="handleValueChange()"></th>
+{% endif %}
+														<td>
+							<select class="userForm" id="vendor" placeholder="Поиск..." oninput="handleValueChange11()">
+{% if vendor == '-' %}
+								<option value=""> Выберите...</option>
+{% else %}
+							<option value="vendor"> {{ vendor }}</option>
+{% endif %}
+{% for v in vendors %}
+								<option value="{{ v['name'] }}">{{ v['name'] }}</option>
+								{% endfor %}
+							</select>
+							</td>
+{% if brand_item == '-' %}
+							<td><input class="userForm" type="text" id="brand" placeholder="Поиск..." oninput="handleValueChange1()"></td>
+{% else %}
+							<td><input class="userForm" type="text" value='{{ brand_item }}' id="brand" placeholder="Поиск..." oninput="handleValueChange1()"></td>
+{% endif %}
+{% if section_item == '-' %}
+							<td><input class="userForm" type="text" id="section" placeholder="Поиск..." oninput="handleValueChange2()"></td>
+{% else %}
+							<td><input class="userForm" type="text" value='{{ section_item }}' id="section" placeholder="Поиск..." oninput="handleValueChange2()"></td>
+{% endif %}
+
+{% if name_item == '-' %}
+							<td><input class="userForm" type="text" id="name" placeholder="Поиск..." oninput="handleValueChange3()"></td>
+{% else %}
+							<td><input class="userForm" type="text" value='{{ name_item }}' id="name" placeholder="Поиск..." oninput="handleValueChange3()"></td>
+{% endif %}
+{% if article_item == '-' %}
+							<td><input class="userForm" type="text" id="article" placeholder="Поиск..." oninput="handleValueChange4()"></td>
+{% else %}
+							<td><input class="userForm" type="text" value='{{ article_item }}' id="article" placeholder="Поиск..." oninput="handleValueChange4()"></td>
+{% endif %}
+{% if price_item == '-' %}
+							<td><input class="userForm" type="text" id="price" placeholder="Поиск..." oninput="handleValueChange5()"></td>
+{% else %}
+							<td><input class="userForm" type="text"  value='{{ price_item }}' id="price" placeholder="Поиск..." oninput="handleValueChange5()"></td>
+{% endif %}
+{% if quantity_item == '-' %}
+							<td><input class="userForm" type="text" id="quantity" placeholder="Поиск..." oninput="handleValueChange6()"></td>
+{% else %}
+							<td><input class="userForm" type="text" value='{{ quantity_item }}' id="quantity" placeholder="Поиск..." oninput="handleValueChange6()"></td>
+{% endif %}
+{% if status_item == '-' %}
+							<td><input class="userForm" type="text" id="status" placeholder="Поиск..." oninput="handleValueChange7()"></td>
+{% else %}
+							<td><input class="userForm" type="text" value='{{ status_item }}' id="status" placeholder="Поиск..." oninput="handleValueChange7()"></td>
+{% endif %}
+						</tr>
+					</tbody>
+				</table>
+</br>
+<button id="copy" class="btn btn-primary"> <i class="bx bx-copy"></i> Копировать фильтр </button>
+<button id="open" class="btn btn-primary"> <i class="lni lni-eye"></i> Показать привязанные товары </button>
+<button id="close" class="btn btn-primary"> <i class="bx bx-hide"></i> Скрыть привязанные товары </button>
+<button id="type_price" class="btn btn-primary"><i class="fadeIn animated bx bx-ruble"></i>Настроить типы цен</button>
+
+</br></br>
+				<table align="center" id="example" class="table table-striped table-bordered" style="width:100%">
+    <thead>
+      <tr>
+								<th scope="col"></th>
+								<th scope="col">ID_сайт</th>
+								<th scope="col">Производитель</th>
+								<th scope="col">Категории</th>
+								<th scope="col">Название</th>
+								<th scope="col">Артикул</th>
+								<th scope="col">Цена</th>
+								<th scope="col">Количество</th>
+								<th scope="col">Статус</th>
+        							<th>vendor</th>
+      </tr>
+    </thead>
+								</table>
+			</div>
+		</div>
+		<!--end page wrapper -->
+		<!--start overlay-->
+		<div class="overlay toggle-icon"></div>
+		<!--end overlay-->
+		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+		<!--End Back To Top Button-->
+		<footer class="page-footer">
+			<p class="mb-0">Copyright © 2022. All right reserved.</p>
+		</footer>
+	</div>
+	<!--end wrapper-->
+<!-- Bootstrap JS -->
+<style>
+.scrollbar
+{
+	margin-left: 0px;
+	float: left;
+	height: 400px;
+	width: 80px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+.is-open-modal {
+	overflow: hidden;
+}
+.modal {
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 1000;
+	background: rgba(0,0,0, 0.7);
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding: 3rem;
+	display: none;
+}
+.modal.is-open {
+	display: block;
+}
+
+
+.dialog {
+	box-sizing: border-box;
+	width: 80%;
+	max-width: 100%;
+	background: #fff;
+	position: relative;
+	left: 55%;
+	transform: translateX(-50%);
+	border-radius: 5px;
+	padding: 2rem;
+}
+.toFill{border: dashed 0.3px blue; border-radius: 1em; display: inline-block;padding: 0.2em;}
+.userForm {
+
+    width: 130px; /*Определяем пиксельную ширину текстового поля с помощью CSS-свойств */
+
+}
+  </style>
+</style>
+
+	<script src="../static/js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" media="all" >
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--plugins-->
+	<script src="../static/js/jquery.min.js"></script>
+	<script src="../static/plugins/simplebar/js/simplebar.min.js"></script>
+	<script src="../static/plugins/fullcalendar/js/main.min.js"></script>
+	<script src="../static/plugins/metismenu/js/metisMenu.min.js"></script>
+	<script src="../static/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<script src="../static/js/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+
+    <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
+		<script src="../static/plugins/metismenu/js/metisMenu.min.js"></script>
+	<script src="../static/js/bootstrap.bundle.min.js"></script>
+	<script>
+function format(q) {
+    // `d` is the original data object for the row
+    var arr = q.split('}');
+    if(arr.length == 1){
+	return 'Нет привязанных товаров';
+    }
+
+    e ='<table align="center" id="example1" class="table table-striped table-bordered" style="width:100%">'+
+									'<thead>'+
+										'<tr>'+
+											'<th scope="col">ID_поставщика</th>'+
+											'<th scope="col">Поставщик</th>'+
+											'<th scope="col">Название</th>'+
+											'<th scope="col">РРЦ</th>'+
+											'<th scope="col">ОЦ</th>'+
+											'<th scope="col">Цена сайта</th>'+
+											'<th scope="col">Количество</th>'+
+											'<th scope="col">Отвязать</th>'+
+											'<th scope="col">Типы цен</th>'+
+										'</tr>'+
+									'</thead>'+
+	'<tbody>' + '<tr>'
+
+    for (let i = 0; i < arr.length-1; i++) {
+	row = arr[i].split(":");
+	let r = '';
+	for (let j = 1; j < row.length-1; j++) {
+		r = row[j].replace('[', '').replace('{', '').replace(']', '').replace('}', '').replaceAll("'", "");
+		n = r.lastIndexOf(',');
+		r = r.substring(0, n);
+
+  		e = e+'<td>'+r+'</td>';
+	}
+	e = e + '<td><button action="delete"><i class="bx bx-trash"></i></button></td>';
+	e = e + '<td><button action="link">Настроить<i class="lni lni-arrow-right"></i></button></td>';
+	e = e +	'</tr>';
+}
+e = e +'</tbody>'+
+	'</table>';
+
+    return (e);
+}
+
+//initialize DataTable
+const tb = $('#example').DataTable({
+  columns: [{
+                className: 'dt-control',
+                orderable: false,
+                data: null,
+                defaultContent: '',
+            },
+    {data: "id_site"},
+    {data: "brand"},
+    {data: "section"},
+    {data: "name"},
+    {data: "article"},
+    {data: "price"},
+    {data: "quantity"},
+    {data: "status"},
+    {data: "vendor"}
+  ],
+"processing": true,
+        "pageLength" : 50,
+        search: {
+            return: true,
+        },
+ 	"bServerSide": true,
+        "bJQueryUI": true,
+      	"sDom": 'lrtp',
+        "sAjaxSource": "/load",
+order: [[ 9, 'desc' ]],
+	paging: true,      // This shows just the table
+        select: {
+            style:    'os',
+            selector: 'td:first-child'
+        },
+});
+
+tb.column(9).visible(false);
+$('#open').on('click', function() {
+$("#example").DataTable().rows().every( function () {
+    var data = this.data();
+
+    var res = format(data.vendor);
+    if(res != 'Нет привязанных товаров'){
+		this.child(res).show();
+    }
+});
+});
+$('#close').on('click', function() {
+$("#example").DataTable().rows().every( function () {
+	this.child.hide();
+});
+});
+$('#example tbody').on('click', 'td.dt-control', function () {
+        var tr = $(this).closest('tr');
+        var row = tb.row(tr);
+
+        if (row.child.isShown()) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        } else {
+            // Open this row
+
+            row.child(format(row.data().vendor)).show();
+            tr.addClass('shown');
+        }
+    });
+
+
+
+$('#example').on('click', 'tbody tr button[action="delete"]', function(){
+  const row = tb.row().child($(this).closest('tr'));
+
+  t =$(this).closest('tr').text().split(' ');
+  $.ajax({
+            type: 'POST', // метод отправки
+            url: "/delete_binding_item?id_vendor="+t[1], // путь к обработчику
+            error: function (jqXHR, exception) {
+               alert('Ошибка! Удалить связь не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            },
+				complete: function(){
+					alert('Привязка удалена!');
+				}
+        });
+  row.remove().draw(False);
+
+});
+
+$('#example').on('click', 'tbody tr button[action="link"]', function(){
+  var tr = $(this).closest('tr').parents('tr');
+  var prevtr = tr.prev('tr')[0];
+  var row = tb.row(prevtr);
+  window.location = "http://212.193.56.216/items/price?id="+row.data().id_site;
+});
+$('#type_price').on('click', function() {
+window.location = "http://212.193.56.216/items/types_price";
+});
+$('#submit').on('click', function() {
+  //when submit button acts to append new row to the table (default)
+		$(".toFill").html('Загружаем...');
+              $.ajax({
+            	type: 'POST', // метод отправки
+            	url: "/add_items?site={{ site }}", // путь к обработчику
+            	error: function (jqXHR, exception) {
+                	alert('Ошибка! Обновление не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            		},
+				complete: function(){
+					location.reload();
+				},
+             });
+  });
+
+ function handleValueChange() {
+    var y = document.getElementById('search_id').value;
+    tb.column(1).search(y).draw();
+}
+  function handleValueChange1() {
+    var y = document.getElementById('brand').value;
+    tb.column(2).search(y).draw();
+}
+  function handleValueChange2() {
+    var y = document.getElementById('section').value;
+    tb.column(3).search(y).draw();
+}
+  function handleValueChange3() {
+    var y = document.getElementById('name').value;
+    tb.column(4).search(y).draw();
+}
+  function handleValueChange4() {
+    var y = document.getElementById('article').value;
+    tb.column(5).search(y).draw();
+}
+  function handleValueChange5() {
+    var y = document.getElementById('price').value;
+    tb.column(6).search(y).draw();
+}
+  function handleValueChange6() {
+    var y = document.getElementById('quantity').value;
+    tb.column(7).search(y).draw();
+}
+  function handleValueChange7() {
+    var y = document.getElementById('status').value;
+    tb.column(8).search(y).draw();
+}
+  function handleValueChange11() {
+    var y = document.getElementById('vendor').value;
+	tb.column(9).search(y.toLowerCase()).draw();
+}
+handleValueChange();
+handleValueChange1();
+handleValueChange2();
+handleValueChange3();
+handleValueChange4();
+handleValueChange5();
+handleValueChange6();
+handleValueChange7();
+handleValueChange11();
+$('#copy').on('click', function() {
+	var y = document.getElementById('search_id').value;
+	var y1 = document.getElementById('brand').value;;
+    	var y2 = document.getElementById('section').value;
+    	var y3 = document.getElementById('name').value;
+	var y4 = document.getElementById('article').value;
+	var y5 = document.getElementById('price').value;
+	var y6 = document.getElementById('quantity').value;
+    	var y7 = document.getElementById('status').value;
+    	var y11 = document.getElementById('vendor').value;
+	var v = 'http://212.193.56.216/items?site={{ site }}&brand_item='+y1+'&id_item='+y+'&section_item='+y2+'&name_item='+y3+'&article_item='+y4+'&price_item='+y5+ '&quantity_item='+y6+ '&status_item='+y7+ '&vendor='+y11;
+	var inp = document.createElement('input')
+  	inp.value = v
+  	document.body.appendChild(inp)
+  	inp.select()
+
+  if (document.execCommand('copy')) {
+    alert('Скопированно в буфер обмена!') ;
+  } else {
+    alert("Не удалось обновить");
+  }
+
+  document.body.removeChild(inp)
+;
+ });
+	</script>
+	<!--app JS-->
+	<script src="../static/js/app.js"></script>
+</body>
+
+</html>

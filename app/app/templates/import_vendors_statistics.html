@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+	<link rel="icon" href="../../static/images/favicon-32x32.png" type="image/png" />
+	<!--plugins-->
+	<link href="../../static/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="../../static/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="../../static/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<!-- loader-->
+	<link href="../../static/css/pace.min.css" rel="stylesheet" />
+	<script src="../../static/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link href="../../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/select/1.4.0/css/select.dataTables.min.css" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<link href="../../static/css/app.css" rel="stylesheet">
+	<link href="../../static/css/icons.css" rel="stylesheet">
+	<!-- Theme Style CSS -->
+	<link rel="stylesheet" href="../../static/css/dark-theme.css" />
+	<link rel="stylesheet" href="../../static/css/semi-dark.css" />
+	<link rel="stylesheet" href="../../static/css/header-colors.css" />
+
+	<title>Лексан</title>
+</head>
+
+<body>
+	<!--wrapper-->
+		<div class="wrapper">
+		<!--sidebar wrapper -->
+		<div class="sidebar-wrapper" data-simplebar="true">
+			<div class="sidebar-header">
+<div>
+					<img src="../../static/images/logo-icon.png" class="logo-icon" alt="logo icon">
+				</div>
+				<div>
+					<h4 class="logo-text">Лексан</h4>
+				</div>
+				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+				</div>
+			</div>
+			<ul class="metismenu" id="menu">
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-home-circle'></i>
+						</div>
+						<div class="menu-title">Дашборд</div>
+					</a>
+					<ul>
+						<li> <a href="/general_dashboard_sales/"><i class="bx bx-right-arrow-alt"></i>Общие продажи</a>
+						</li>
+						<li> <a href="/sales_by_managers/"><i class="bx bx-right-arrow-alt"></i>Продажи по менеджерам</a>
+						</li>
+						<li> <a href="/reverse/"><i class="bx bx-right-arrow-alt"></i>Возвраты</a>
+						</li>
+						<li> <a href="/1"><i class="bx bx-right-arrow-alt"></i>Самые продаваемые товары</a>
+						</li>
+						<li> <a href="/2"><i class="bx bx-right-arrow-alt"></i>Активность обновления поставщиков</a>
+						</li>
+						<li> <a href="/3"><i class="bx bx-right-arrow-alt"></i>Обработанные товары/необработанные</a>
+						</li>
+						<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Продажи по маркетам</div>
+					</a>
+					<ul>
+						<li> <a href="/ozon"><i class="bx bx-right-arrow-alt"></i>OZON</a>
+						</li>
+						<li> <a href="/yandex_market"><i class="bx bx-right-arrow-alt"></i>Yandex Market</a>
+						</li>
+					</ul>
+				</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cart'></i>
+						</div>
+						<div class="menu-title">Заказы</div>
+					</a>
+					<ul>
+						<li> <a href="/orders"><i class="bx bx-right-arrow-alt"></i>Список заказов</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cart'></i>
+						</div>
+						<div class="menu-title">Заказы маркетплейсов</div>
+					</a>
+					<ul>
+						<li> <a href="/ym_orders"><i class="bx bx-right-arrow-alt"></i>Яндекс Маркет Boint FBS</a>
+						</li>
+						<li> <a href="/ozon_orders?client_id=258"><i class="bx bx-right-arrow-alt"></i>OZON МГТ FBS</a>
+						</li>
+						<li> <a href="/ozon_orders?client_id=12712"><i class="bx bx-right-arrow-alt"></i>OZON КГТ FBS</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-receipt'></i>
+						</div>
+						<div class="menu-title">Товары</div>
+					</a>
+					<ul>
+						<li> <a href="/items/statistics?site={{ site }}"><i class="bx bx-right-arrow-alt"></i>Статистика последнего импорта товаров</a>
+						</li>
+						<li> <a href="/items?site={{ site }}"><i class="bx bx-right-arrow-alt"></i>Товары</a>
+						</li>
+						<li> <a href="/wildberries_items"><i class="bx bx-right-arrow-alt"></i>Товары "Wildberries"</a>
+						</li>
+						<li> <a href="/vendor_items"><i class="bx bx-right-arrow-alt"></i>Необработанные товары</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cube'></i>
+						</div>
+						<div class="menu-title">Поставщики</div>
+					</a>
+					<ul>
+						<li> <a href="/vendors"><i class="bx bx-right-arrow-alt"></i>Список поставщиков</a>
+						</li>
+
+					</ul>
+				</li>
+						<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Импорт товаров поставщиков</div>
+					</a>
+					<ul>
+						<li> <a href="/modules"><i class="bx bx-right-arrow-alt"></i>Список интеграций</a>
+						</li>
+						<li> <a href="/modules/profiles"><i class="bx bx-right-arrow-alt"></i>Профили экспорта "Озон"</a>
+						</li>
+						<li> <a href="/modules/ym_profiles"><i class="bx bx-right-arrow-alt"></i>Профили экспорта "YandexMarket"</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Сборка заказов</div>
+					</a>
+					<ul>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--end sidebar wrapper -->
+		<!--start header -->
+<header>
+				<div class="topbar d-flex align-items-center">
+				<nav class="navbar navbar-expand">
+					<div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
+					</div>
+					<div class="search-bar flex-grow-1">
+						<div class="position-relative search-bar-box">
+						</div>
+					</div>
+					<div class="top-menu ms-auto">
+						<ul class="navbar-nav align-items-center">
+							<li class="nav-item mobile-search-icon">
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<div class="dropdown-menu dropdown-menu-end">
+									<div class="row row-cols-3 g-3 p-3">
+
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<div class="dropdown-menu dropdown-menu-end">
+									<div class="header-notifications-list">
+
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									 <i class='bx bx-globe'>{{ site }}</i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end">
+<a href="javascript:;">
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/user"></a></p>
+											<p class="msg-header-clear ms-auto"></p>
+										</div>
+</a>
+									<div class="header-message-list">
+
+										<div class="msg-header">
+											<p class="msg-header-title">Выберите сайт: </p>
+										</div>
+{% if site =='boint' %}
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/items/statistics">Технолайн</a></p>
+										</div>
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/items/statistics?site=maunfeld.spb">Maunfeld.Spb</a></p>
+										</div>
+{% elif site =='maunfeld.spb' %}
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/items/statistics">Технолайн</a></p>
+										</div>
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/items/statistics?site=boint">Boint</a></p>
+										</div>
+{% else %}
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/items/statistics?site=maunfeld.spb">Maunfeld.Spb</a></p>
+										</div>
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/items/statistics?site=boint">Boint</a></p>
+										</div>
+{% endif %}
+
+									</div>
+									<a href="javascript:;">
+									<div class="text-center msg-footer"><a href="">Выход</a></div>
+</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+</header>
+		<!--end header -->
+		<!--start page wrapper -->
+		<div class="page-wrapper">
+			<div class="page-content">
+				<!--breadcrumb-->
+				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+					<div class="breadcrumb-title pe-3">Статистика</div>
+					<div class="ps-3">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb mb-0 p-0">
+								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Статистика импорта {{ site }}</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<!--end breadcrumb-->
+				<div class="row">
+
+						<h6 class="mb-0 text-uppercase">Сайт {{ site }}</h6>
+						<hr/>
+								<table id="example" class="table table-striped table-bordered" style="width:100%">
+									<thead>
+										<tr>
+											<th scope="col">Поставщик</th>
+											<th scope="col">Дата последнего импорта</th>
+											<th scope="col">Количество новых товаров</th>
+											<th scope="col">Количество обновленных товаров</th>
+										</tr>
+									</thead>
+									<tbody>
+									{% for d in df %}
+										<tr>
+											<th>{{ d['name'] }}</th>
+											<td>{{ d['date_register'] }}</td>
+											<td>{{ d['count_new'] }}</td>
+											<td>{{ d['count_update'] }}</td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table>
+
+				</div>
+		<!--end page wrapper -->
+		<!--start overlay-->
+		<div class="overlay toggle-icon"></div>
+		<!--end overlay-->
+		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+		<!--End Back To Top Button-->
+		<footer class="page-footer">
+			<p class="mb-0">Copyright © 2022. All right reserved.</p>
+		</footer>
+	</div>
+	<!--end wrapper-->
+
+<!-- Bootstrap JS -->
+
+	<script src="../../static/js/bootstrap.bundle.min.js"></script>
+	<script src="../../static/js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" media="all" >
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--plugins-->
+	<script src="../../static/js/jquery.min.js"></script>
+	<script src="../../static/plugins/simplebar/js/simplebar.min.js"></script>
+	<script src="../../static/plugins/fullcalendar/js/main.min.js"></script>
+	<script src="../../static/plugins/metismenu/js/metisMenu.min.js"></script>
+	<script src="../../static/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<script src="../../static/js/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+
+    <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
+		<script src="../../static/plugins/metismenu/js/metisMenu.min.js"></script>
+
+	<!--app JS-->
+	<script src="../../static/js/app.js"></script>
+		</div>	</div>
+</body>
+
+</html>

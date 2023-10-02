@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+	<link rel="icon" href="../static/images/favicon-32x32.png" type="image/png" />
+	<!--plugins-->
+	<link href="../static/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="../static/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="../static/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<!-- loader-->
+	<link href="../static/css/pace.min.css" rel="stylesheet" />
+	<script src="../static/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/select/1.4.0/css/select.dataTables.min.css" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<link href="../static/css/app.css" rel="stylesheet">
+	<link href="../static/css/icons.css" rel="stylesheet">
+	<!-- Theme Style CSS -->
+	<link rel="stylesheet" href="../static/css/dark-theme.css" />
+	<link rel="stylesheet" href="../static/css/semi-dark.css" />
+	<link rel="stylesheet" href="../static/css/header-colors.css" />
+	<link href="../static/css/multi-select.css" media="screen" rel="stylesheet" type="text/css">
+
+	<title>Лексан</title>
+</head>
+
+<body>
+	<!--wrapper-->
+		<div class="wrapper">
+		<!--sidebar wrapper -->
+		<div class="sidebar-wrapper" data-simplebar="true">
+			<div class="sidebar-header">
+<div>
+					<img src="../static/images/logo-icon.png" class="logo-icon" alt="logo icon">
+				</div>
+				<div>
+					<h4 class="logo-text">Лексан</h4>
+				</div>
+				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+				</div>
+			</div>
+			<ul class="metismenu" id="menu">
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-home-circle'></i>
+						</div>
+						<div class="menu-title">Дашборд</div>
+					</a>
+					<ul>
+						<li> <a href="/general_dashboard_sales/"><i class="bx bx-right-arrow-alt"></i>Общие продажи</a>
+						</li>
+						<li> <a href="/sales_by_managers/"><i class="bx bx-right-arrow-alt"></i>Продажи по менеджерам</a>
+						</li>
+						<li> <a href="/reverse/"><i class="bx bx-right-arrow-alt"></i>Возвраты</a>
+						</li>
+						<li> <a href="/1"><i class="bx bx-right-arrow-alt"></i>Самые продаваемые товары</a>
+						</li>
+						<li> <a href="/2"><i class="bx bx-right-arrow-alt"></i>Активность обновления поставщиков</a>
+						</li>
+						<li> <a href="/3"><i class="bx bx-right-arrow-alt"></i>Обработанные товары/необработанные</a>
+						</li>
+						<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Продажи по маркетам</div>
+					</a>
+					<ul>
+						<li> <a href="/ozon"><i class="bx bx-right-arrow-alt"></i>OZON</a>
+						</li>
+						<li> <a href="/yandex_market"><i class="bx bx-right-arrow-alt"></i>Yandex Market</a>
+						</li>
+					</ul>
+				</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cart'></i>
+						</div>
+						<div class="menu-title">Заказы</div>
+					</a>
+					<ul>
+						<li> <a href="/orders"><i class="bx bx-right-arrow-alt"></i>Список заказов</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cart'></i>
+						</div>
+						<div class="menu-title">Заказы маркетплейсов</div>
+					</a>
+					<ul>
+						<li> <a href="/ym_orders"><i class="bx bx-right-arrow-alt"></i>Яндекс Маркет Boint FBS</a>
+						</li>
+						<li> <a href="/ozon_orders?client_id=258"><i class="bx bx-right-arrow-alt"></i>OZON МГТ FBS</a>
+						</li>
+						<li> <a href="/ozon_orders?client_id=12712"><i class="bx bx-right-arrow-alt"></i>OZON КГТ FBS</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-receipt'></i>
+						</div>
+						<div class="menu-title">Товары</div>
+					</a>
+					<ul>
+						<li> <a href="/items/statistics?site={{ site }}"><i class="bx bx-right-arrow-alt"></i>Статистика последнего импорта товаров</a>
+						</li>
+						<li> <a href="/items?site={{ site }}"><i class="bx bx-right-arrow-alt"></i>Товары</a>
+						</li>
+						<li> <a href="/wildberries_items"><i class="bx bx-right-arrow-alt"></i>Товары "Wildberries"</a>
+						</li>
+						<li> <a href="/vendor_items"><i class="bx bx-right-arrow-alt"></i>Необработанные товары</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cube'></i>
+						</div>
+						<div class="menu-title">Поставщики</div>
+					</a>
+					<ul>
+						<li> <a href="/vendors"><i class="bx bx-right-arrow-alt"></i>Список поставщиков</a>
+						</li>
+
+					</ul>
+				</li>
+						<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Импорт товаров поставщиков</div>
+					</a>
+					<ul>
+						<li> <a href="/modules"><i class="bx bx-right-arrow-alt"></i>Список интеграций</a>
+						</li>
+						<li> <a href="/modules/profiles"><i class="bx bx-right-arrow-alt"></i>Профили экспорта "Озон"</a>
+						</li>
+						<li> <a href="/modules/ym_profiles"><i class="bx bx-right-arrow-alt"></i>Профили экспорта "YandexMarket"</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Сборка заказов</div>
+					</a>
+					<ul>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--end sidebar wrapper -->
+		<!--start header -->
+<header>
+				<div class="topbar d-flex align-items-center">
+				<nav class="navbar navbar-expand">
+					<div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
+					</div>
+					<div class="search-bar flex-grow-1">
+						<div class="position-relative search-bar-box">
+						</div>
+					</div>
+					<div class="top-menu ms-auto">
+						<ul class="navbar-nav align-items-center">
+							<li class="nav-item mobile-search-icon">
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<div class="dropdown-menu dropdown-menu-end">
+									<div class="row row-cols-3 g-3 p-3">
+
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<div class="dropdown-menu dropdown-menu-end">
+									<div class="header-notifications-list">
+
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									 <i class='bx bx-globe'>{{ site }}</i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end">
+<a href="javascript:;">
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/user"></a></p>
+											<p class="msg-header-clear ms-auto"></p>
+										</div>
+</a>
+									<div class="header-message-list">
+
+										<div class="msg-header">
+											<p class="msg-header-title">Выберите сайт: </p>
+										</div>
+{% if site =='boint' %}
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/vendor?vendor={{ vendors[0]['name'] }}&site=технолайн">Технолайн</a></p>
+										</div>
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/vendor?vendor={{ vendors[0]['name'] }}&site=maunfeld.spb">Maunfeld.Spb</a></p>
+										</div>
+{% elif site =='maunfeld.spb' %}
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/vendor?vendor={{ vendors[0]['name'] }}&site=технолайн">Технолайн</a></p>
+										</div>
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/vendor?vendor={{ vendors[0]['name'] }}&site=boint">Boint</a></p>
+										</div>
+{% else %}
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/vendor?vendor={{ vendors[0]['name'] }}&site=maunfeld.spb">Maunfeld.Spb</a></p>
+										</div>
+										<div class="msg-header">
+											<p class="msg-header-title"><a href="/vendor?vendor={{ vendors[0]['name'] }}&site=boint">Boint</a></p>
+										</div>
+{% endif %}
+
+									</div>
+									<a href="javascript:;">
+									<div class="text-center msg-footer"><a href="">Выход</a></div>
+</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+</header>
+		<!--end header -->
+		<!--start page wrapper -->
+		<div class="page-wrapper">
+			<div class="page-content">
+				<!--breadcrumb-->
+				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+					<div class="breadcrumb-title pe-3">Поставщики</div>
+					<div class="ps-3">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb mb-0 p-0">
+								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Поставщик {{ vendors[0]['name'] }}</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				<!--end breadcrumb-->
+				<div class="row">
+<div class="col-xl-9 mx-auto">
+						<h6 class="mb-0 text-uppercase">Транспорт</h6>
+						<hr/>
+								<table id="example" class="table table-striped table-bordered" style="width:100%">
+									<thead>
+										<tr>
+											<th scope="col">Тип</th>
+											<th scope="col">Хост</th>
+											<th scope="col">Порт</th>
+											<th scope="col">Редактировать</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>{{ transport['name'] }}</td>
+											<th>{{ transport['host'] }}</th>
+											<td>{{ transport['port'] }}</td>
+											<td><button class="btn btn-primary" action="edit"><i class="bx bx-pencil"></i></button></td>
+										</tr>
+									</tbody>
+								</table>
+
+				</div>
+				<div class="row">
+<div class="col-xl-9 mx-auto">
+</br></br>
+						<h6 class="mb-0 text-uppercase"></br>Настройка импорта и экспорта</h6>
+						<hr/>
+								<table id="example1" class="table table-striped table-bordered" style="width:100%">
+									<thead>
+										<tr>
+											<th scope="col">Поставщик</th>
+											<th scope="col">Расписание импорта в CRON формате</th>
+											<th scope="col"></th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>{{ vendors[0]['name'] }}</td>
+											<td><input class="userForm" type="text" value="{{ vendors[0]['cron'] }}" id="cron" /></td>
+											<td><button id="submit_cron" class="btn btn-primary" action="addRow">Сохранить</button></td>
+										</tr>
+									</tbody>
+								</table>
+				</div>
+</div>
+</br></br>
+				<div class="row">
+
+<div class="col-xl-9 mx-auto">
+						<h6 class="mb-0 text-uppercase">Правила</h6>
+<hr/>
+					<button id="submit_rule" class="btn btn-primary" >+ Добавить</button>
+					</br>
+					<table align="center" id="rule" class="table table-striped table-bordered" style="width:100%">
+									{% for d in rule %}
+										<tr>
+											<td>{{ d['id_rule'] }}</td>
+											<td>{{ d['story'] }}</td>
+											<td>{{ d['vendor_site'] }}</td>
+											<td>{{ d['section'] }}</td>
+											<td>{{ d['type'] }}</td>
+											<td>{{ d['margin'] }}</td>
+											<td>{{ d['type_margin'] }}</td>
+											<td></td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table>
+				</div>
+</div>
+			</div>
+		</div>
+		<div class="modal" id="modal">
+			<div class="dialog1">
+				<div class="row">
+					<div class="scrollbar">
+					<div class="col-xl-9 mx-auto">
+</br>
+						<h6 class="mb-0 text-uppercase">Информация о транспорте</h6>
+						<hr/>
+						<div class="card">
+							<div class="card-body">
+
+					</br>Тип транспорта</br>
+					<select class="form-control search-control" id="transport">
+						{% for d in transports %}
+						<option value="{{ d['name'] }}">{{ d['name'] }}</option>
+						{% endfor %}
+					</select>
+					</br>Хост</br><input class="form-control search-control" type="text" id="host" />
+					</br>Порт</br><input class="form-control search-control" type="number" id="port" />
+					</br>Логин</br><input class="form-control search-control" type="text" id="login" value="{{ transport['login'] }}" />
+					</br>Пароль</br><input class="form-control search-control" type="password" id="password" value="{{ transport['password'] }}" />
+					{% if transport['name'] != 'MAIL' %}
+								</br>Путь к файлу на сервере</br><input class="form-control search-control" type="text" id="path" value="{{ transport['path'] }}" />
+								</br>Имя файла на сервере</br><input class="form-control search-control" type="text" id="name" value="{{ vendors[0]['file_name'] }}" />
+					{% else %}
+								<input class="form-control search-control" type="hidden" id="path" value="{{ transport['path'] }}" />
+								</br> Слово которое ищем в заголовке </br><input class="form-control search-control" type="text" id="name" value="{{ vendors[0]['name'] }}" />
+					{% endif %}
+								<input type="hidden" id="h" />
+								</br><button id="submit" class="btn btn-primary" action="addRow">Сохранить</button>
+							</div>
+						</div>
+					</div>
+
+					</div>
+					</div>
+			</div>
+		</div>
+			<div class="modal" id="modal1">
+			<div class="dialog">
+				<div class="row">
+					<div class="scrollbar">
+</br>
+
+<div class="card">
+							<div class="card-body">
+		<h6 class="mb-0 text-uppercase">Новое правило</h6>
+<hr/>
+						Магазин</br>
+						<select  class="form-control search-control" id="story">
+							{% if site =='boint' %}
+								<option value='boint'>boint</option>
+							{% elif site =='maunfeld.spb' %}
+								<option value='maunfeld.spb'>maunfeld.spb</option>
+							{% else %}
+								<option value='технолайн'>технолайн</option>
+							{% endif %}
+					</select>
+</br>
+<input type="hidden" id="h1" />
+					<table align="center" id="rule_" class="table table-striped table-bordered" style="width:100%">
+										<tr>
+									<thead>
+										<tr>
+											<th scope="col">Бренд</th>
+											<th scope="col">Категория</th>
+										</tr>
+									</thead>
+											<th>
+<div class="input-group">
+<div class="form-check form-switch">
+					<a href='#' id='select-all1'>Выбрать все</a>
+</div>
+<div class="form-check form-switch">
+					<a href='#' id='deselect-all1'>Отменить</a></br>
+</div></div>
+					<select  multiple="multiple"  class="form-control search-control" id="vendor">
+						{% for d in story_vendor %}
+							<option value="{{ d }}">{{ d }}</option>
+						{% endfor %}
+					</select>
+</th>
+<th>
+<div class="input-group">
+<div class="form-check form-switch">
+					<a href='#' id='select-all2'>Выбрать все</a>
+</div>
+<div class="form-check form-switch">
+					<a href='#' id='deselect-all2'>Отменить</a></br>
+</div></div>
+					<select  multiple="multiple"  class="form-control search-control" id="section">
+						{% for d in section %}
+							<option value="{{ d }}">{{ d }}</option>
+						{% endfor %}
+					</select>
+</th>
+										</tr>
+									</tbody>
+								</table>
+</br>
+   					<div class="form-check form-switch">
+						<label for="select" class="control-label col-xs-3">Использовать для расчёта РРЦ</label>
+						<input class="form-check-input" type="checkbox" value='on' autocomplete="off" name="select" id="cb" />
+					</div>
+
+											</br>Тип
+											<select class="form-control search-control" id="type">
+												<option value="Процентная">Процентная</option>
+												<option value="Фиксированная">Фиксированная</option>
+												</select>
+											</br>Наценка (%/руб.)
+											<input class="form-control search-control" type="text" id="margin" />
+											</br>Вариант нацисления наценки
+												<select class="form-control search-control" id="type_margin">
+													<option value="Суммирование">Добавление - наценка добавляется к сумме</option>
+													<option value="Вычитание">Вычитание - наценка вычитается из суммы</option>
+												</select>
+
+
+					</br><button id="submit1" class="btn btn-primary" action="addRow">Сохранить</button>
+</div></div>
+
+				</div>
+					</div>
+			</div>
+		</div>
+		<!--end page wrapper -->
+		<!--start overlay-->
+		<div class="overlay toggle-icon"></div>
+		<!--end overlay-->
+		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+		<!--End Back To Top Button-->
+		<footer class="page-footer">
+			<p class="mb-0">Copyright © 2022. All right reserved.</p>
+		</footer>
+	</div>
+	<!--end wrapper-->
+
+<!-- Bootstrap JS -->
+<style>
+.scrollbar
+{
+	margin-left: 0px;
+	float: left;
+	height: 600px;
+	width: 80px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+	.is-open-modal {
+	overflow: hidden;
+}
+.modal {
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 1000;
+	background: rgba(0,0,0, 0.7);
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding: 1rem;
+	display: none;
+}
+.modal.is-open {
+	display: block;
+}
+
+
+.dialog {
+	box-sizing: border-box;
+	width: 68%;
+	max-width: 100%;
+	background: #fff;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 2px;
+	padding: 0rem;
+}
+.dialog1 {
+	box-sizing: border-box;
+	width: 50%;
+	max-width: 100%;
+	background: #fff;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 2px;
+	padding: 0rem;
+}
+.userForm {
+
+    width: 165px; /*Определяем пиксельную ширину текстового поля с помощью CSS-свойств */
+
+}
+</style>
+				<script src="../static/js/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" media="all" >
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--plugins-->
+	<script src="../static/js/jquery.min.js"></script>
+	<script src="../static/plugins/simplebar/js/simplebar.min.js"></script>
+	<script src="../static/plugins/fullcalendar/js/main.min.js"></script>
+	<script src="../static/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<script src="../static/js/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+	<script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+
+    <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
+
+	<script src="../static/js/jquery.multi-select.js" type="text/javascript"></script>
+	<script src="../static/plugins/metismenu/js/metisMenu.min.js"></script>
+<script src="../static/js/jquery.quicksearch.js"></script>
+			<script src="../static/js/bootstrap.bundle.min.js"></script>
+	<script>
+
+$('#vendor').multiSelect({
+  selectableHeader: "<input type='text' class='userForm' autocomplete='off' placeholder='поиск...'>",
+  selectionHeader: "<input type='text' class='userForm' autocomplete='off' placeholder='поиск...'>",
+  afterInit: function(ms){
+    var that = this,
+        $selectableSearch = that.$selectableUl.prev(),
+        $selectionSearch = that.$selectionUl.prev(),
+        selectableSearchString = '#'+that.$container.attr('id')+' .ms-elem-selectable:not(.ms-selected)',
+        selectionSearchString = '#'+that.$container.attr('id')+' .ms-elem-selection.ms-selected';
+
+    that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+    .on('keydown', function(e){
+      if (e.which === 40){
+        that.$selectableUl.focus();
+        return false;
+      }
+    });
+
+    that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+    .on('keydown', function(e){
+      if (e.which == 40){
+        that.$selectionUl.focus();
+        return false;
+      }
+    });
+  },
+  afterSelect: function(){
+    this.qs1.cache();
+    this.qs2.cache();
+  },
+  afterDeselect: function(){
+    this.qs1.cache();
+    this.qs2.cache();
+  }
+});
+	$('#select-all1').click(function(){
+  		$('#vendor').multiSelect('select_all');
+  		return false;
+	});
+	$('#deselect-all1').click(function(){
+  		$('#vendor').multiSelect('deselect_all');
+  		return false;
+	});
+	$('#section').multiSelect({
+  selectableHeader: "<input type='text' class='userForm' autocomplete='off' placeholder='поиск...'>",
+  selectionHeader: "<input type='text' class='userForm' autocomplete='off' placeholder='поиск...'>",
+  afterInit: function(ms){
+    var that = this,
+        $selectableSearch = that.$selectableUl.prev(),
+        $selectionSearch = that.$selectionUl.prev(),
+        selectableSearchString = '#'+that.$container.attr('id')+' .ms-elem-selectable:not(.ms-selected)',
+        selectionSearchString = '#'+that.$container.attr('id')+' .ms-elem-selection.ms-selected';
+
+    that.qs1 = $selectableSearch.quicksearch(selectableSearchString)
+    .on('keydown', function(e){
+      if (e.which === 40){
+        that.$selectableUl.focus();
+        return false;
+      }
+    });
+
+    that.qs2 = $selectionSearch.quicksearch(selectionSearchString)
+    .on('keydown', function(e){
+      if (e.which == 40){
+        that.$selectionUl.focus();
+        return false;
+      }
+    });
+  },
+  afterSelect: function(){
+    this.qs1.cache();
+    this.qs2.cache();
+  },
+  afterDeselect: function(){
+    this.qs1.cache();
+    this.qs2.cache();
+  }
+});
+	$('#select-all2').click(function(){
+  		$('#section').multiSelect('select_all');
+  		return false;
+	});
+	$('#deselect-all2').click(function(){
+  		$('#section').multiSelect('deselect_all');
+  		return false;
+	});
+	function showModal(id){
+		$(document.body).addClass('is-open-modal');
+		$(id).addClass('is-open');
+	}
+	function hideModals(){
+		$(document.body).removeClass('is-open-modal');
+		$('.modal').removeClass('is-open');
+	}
+
+$(document).click(function (e) {
+    if ($(e.target).is('.modal')) {
+          hideModals();
+    }
+});
+
+
+//initialize DataTable
+
+	var tableTransport = $('#example').DataTable( {
+				        paging: false,
+        bFilter: false,
+        ordering: false,
+        searching: true,
+        dom: 't',         // This shows just the table
+				order: [[ 1, 'desc' ]]
+			} );
+
+	var tableRule = $('#rule').DataTable({
+  columns: [
+  	{title: 'ID'},
+    {title: 'Магазин'},
+    {title: 'Бренд', width: "20%" },
+    {title: 'Категория', width: "20%" },
+    {title: 'Тип'},
+    {title: 'Наценка (%/руб.)'},
+    {title: 'Тип наценки'},
+    {
+      title: 'Удалить',
+      //user 'render' to append Edit/Delete buttons for each entry
+      render: data => `${data}<div class="btn-group"><button class="btn btn-primary" action="delete"><i class="bx bx-trash"></i></button></div>`
+    }
+  ],
+            "info": true,
+            "ordering": true,
+             "pageLength" : 50,
+        select: {
+            style:    'os',
+            selector: 'td:first-child'
+        },
+});
+
+//'Edit' button click handler
+$('#example').on('click', 'tbody tr button[action="edit"]', function(){
+  showModal('#modal');
+  const row = tableTransport.row($(event.target).closest('tr'));
+  $('#submit').attr('rowindex', row.index());
+  $('#submit').attr('action', 'confirmEdit');
+  $("#transport").val(row.data()[0]);
+  $("#host").val(row.data()[1]);
+  $("#port").val(row.data()[2]);
+  $("#h").val(row.data()[3]);
+});
+
+$('#rule').on('click', 'tbody tr button[action="delete"]', function(){
+  const row = tableRule.row($(event.target).closest('tr'));
+    $.ajax({
+            type: 'POST', // метод отправки
+            url: "/delete_rule?id="+row.data()[0], // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка! Удалить правило не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            }
+        });
+  row.remove().draw();
+});
+
+
+$('#submit').on('click', function() {
+    	$.ajax({
+            type: 'POST', // метод отправки
+            url: "/update_transport?transport=" +$("#transport").val()+'&host=' +$("#host").val()+
+            '&port=' +$("#port").val()+'&login=' +$("#login").val()+'&password=' +$("#password").val()+
+            '&path=' +$("#path").val()+'&name_file=' +$("#name").val(), // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка! Обновление не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            }
+        });
+    //change affected row data and re-draw the table
+  tableTransport.row($(this).attr('rowindex')).data([$("#transport").val(), $("#host").val(), $("#port").val(), $("#h").val()]).draw();
+  //clean up form, switch it to default state
+  $("#transport").val("");
+  $("#host").val("");
+  $("#port").val("");
+  $("#login").val("");
+  $("#password").val("");
+  $("#path").val("");
+  $("#name").val("");
+  $("#h").val("");
+  $('#submit').attr('action', 'addRow');
+  hideModals();
+});
+$('#submit_cron').on('click', function() {
+  //when submit button acts to append new row to the table (default)
+  //when submit button acts to submit edits
+
+    	$.ajax({
+            type: 'POST', // метод отправки
+            url: "/update_vendor_cron/?vendor={{ vendors[0]['name'] }}&cron=" +$("#cron").val(), // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка! Обновление не удалось: ' + jqXHR.responseText); 
+            },
+	   complete: function(){
+					alert('Успешно сохранено!');
+				}
+        });
+});
+$('#submit_rule').on('click', function() {
+  showModal('#modal1');
+});
+$('#submit1').on('click', function() {
+    var v = $("#vendor").val()
+    v = v.join(',  ');
+    var s = $("#section").val()
+    s = s.join(',');
+     if ($('#cb').is(":checked")) {
+          var chech = ($('#cb').val());
+        }
+    	$.ajax({
+            type: 'POST', // метод отправки
+            url: "/add_rule/?story="+$("#story").val()+'&vendor={{ vendors[0]['name'] }}'+'&vendor_site=' +v+'&section=' +s+'&type=' +$("#type").val()+'&cb=' +chech+ '&margin=' +
+             		$("#margin").val()+ '&type_margin='+$("#type_margin").val(), // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка! Добавить правило не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            }
+        });
+
+    tableRule.row.add([$("#h1").val(), $("#story").val(), v, s, $("#type").val(), $("#margin").val(), $("#type_margin").val()]).draw();
+
+  $("#story").val("");
+  $("#vendor").val("");
+  $("#section").val("");
+  $("#type").val("");
+  $("#margin").val("");
+  $("#type_margin").val("");
+  $("#h").val("");
+  $('#submit').attr('action', 'addRow');
+  hideModals();
+});
+	</script>
+	<!--app JS-->
+	<script src="../../static/js/app.js"></script>
+</body>
+
+</html>

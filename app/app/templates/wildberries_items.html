@@ -1,0 +1,872 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+	<link rel="icon" href="../static/images/favicon-32x32.png" type="image/png" />
+	<!--plugins-->
+	<link href="../static/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="../static/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="../static/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<!-- loader-->
+	<link href="../static/css/pace.min.css" rel="stylesheet" />
+	<script src="../static/js/pace.min.js"></script>
+	<!-- Bootstrap CSS -->
+	<link href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdn.datatables.net/select/1.4.0/css/select.dataTables.min.css" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	<link href="../static/css/app.css" rel="stylesheet">
+	<link href="../static/css/icons.css" rel="stylesheet">
+	<!-- Theme Style CSS -->
+	<link rel="stylesheet" href="../static/css/dark-theme.css" />
+	<link rel="stylesheet" href="../static/css/semi-dark.css" />
+	<link rel="stylesheet" href="../static/css/header-colors.css" />
+
+	<title>Лексан</title>
+</head>
+
+<body>
+	<!--wrapper-->
+			<div class="wrapper">
+		<!--sidebar wrapper -->
+		<div class="sidebar-wrapper" data-simplebar="true">
+			<div class="sidebar-header">
+<div>
+					<img src="../static/images/logo-icon.png" class="logo-icon" alt="logo icon">
+				</div>
+				<div>
+					<h4 class="logo-text">Лексан</h4>
+				</div>
+				<div class="toggle-icon ms-auto"><i class='bx bx-arrow-to-left'></i>
+				</div>
+			</div>
+			<ul class="metismenu" id="menu">
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-home-circle'></i>
+						</div>
+						<div class="menu-title">Дашборд</div>
+					</a>
+					<ul>
+						<li> <a href="/general_dashboard_sales/"><i class="bx bx-right-arrow-alt"></i>Общие продажи</a>
+						</li>
+						<li> <a href="/sales_by_managers/"><i class="bx bx-right-arrow-alt"></i>Продажи по менеджерам</a>
+						</li>
+						<li> <a href="/reverse/"><i class="bx bx-right-arrow-alt"></i>Возвраты</a>
+						</li>
+						<li> <a href="/1"><i class="bx bx-right-arrow-alt"></i>Самые продаваемые товары</a>
+						</li>
+						<li> <a href="/2"><i class="bx bx-right-arrow-alt"></i>Активность обновления поставщиков</a>
+						</li>
+						<li> <a href="/3"><i class="bx bx-right-arrow-alt"></i>Обработанные товары/необработанные</a>
+						</li>
+						<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Продажи по маркетам</div>
+					</a>
+					<ul>
+						<li> <a href="/ozon"><i class="bx bx-right-arrow-alt"></i>OZON</a>
+						</li>
+						<li> <a href="/yandex_market"><i class="bx bx-right-arrow-alt"></i>Yandex Market</a>
+						</li>
+					</ul>
+				</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cart'></i>
+						</div>
+						<div class="menu-title">Заказы</div>
+					</a>
+					<ul>
+						<li> <a href="/orders"><i class="bx bx-right-arrow-alt"></i>Список заказов</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cart'></i>
+						</div>
+						<div class="menu-title">Заказы маркетплейсов</div>
+					</a>
+					<ul>
+						<li> <a href="/ym_orders"><i class="bx bx-right-arrow-alt"></i>Яндекс Маркет Boint FBS</a>
+						</li>
+						<li> <a href="/ozon_orders?client_id=258"><i class="bx bx-right-arrow-alt"></i>OZON МГТ FBS</a>
+						</li>
+						<li> <a href="/ozon_orders?client_id=12712"><i class="bx bx-right-arrow-alt"></i>OZON КГТ FBS</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-receipt'></i>
+						</div>
+						<div class="menu-title">Товары</div>
+					</a>
+					<ul>
+						<li> <a href="/items/statistics?site={{ site }}"><i class="bx bx-right-arrow-alt"></i>Статистика последнего импорта товаров</a>
+						</li>
+						<li> <a href="/items?site={{ site }}"><i class="bx bx-right-arrow-alt"></i>Товары</a>
+						</li>
+						<li> <a href="/wildberries_items"><i class="bx bx-right-arrow-alt"></i>Товары "Wildberries"</a>
+						</li>
+						<li> <a href="/vendor_items"><i class="bx bx-right-arrow-alt"></i>Необработанные товары</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-cube'></i>
+						</div>
+						<div class="menu-title">Поставщики</div>
+					</a>
+					<ul>
+						<li> <a href="/vendors"><i class="bx bx-right-arrow-alt"></i>Список поставщиков</a>
+						</li>
+
+					</ul>
+				</li>
+						<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Импорт товаров поставщиков</div>
+					</a>
+					<ul>
+						<li> <a href="/modules"><i class="bx bx-right-arrow-alt"></i>Список интеграций</a>
+						</li>
+						<li> <a href="/modules/profiles"><i class="bx bx-right-arrow-alt"></i>Профили экспорта "Озон"</a>
+						</li>
+						<li> <a href="/modules/ym_profiles"><i class="bx bx-right-arrow-alt"></i>Профили экспорта "YandexMarket"</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon"><i class='bx bx-export'></i>
+						</div>
+						<div class="menu-title">Сборка заказов</div>
+					</a>
+					<ul>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<!--end sidebar wrapper -->
+		<!--start header -->
+<header>
+			<div class="topbar d-flex align-items-center">
+				<nav class="navbar navbar-expand">
+					<div class="mobile-toggle-menu"><i class='bx bx-menu'></i>
+					</div>
+					<div class="search-bar flex-grow-1">
+						<div class="position-relative search-bar-box">
+						</div>
+					</div>
+					<div class="top-menu ms-auto">
+						<ul class="navbar-nav align-items-center">
+							<li class="nav-item mobile-search-icon">
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<div class="dropdown-menu dropdown-menu-end">
+									<div class="row row-cols-3 g-3 p-3">
+
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+								<div class="dropdown-menu dropdown-menu-end">
+									<div class="header-notifications-list">
+
+									</div>
+								</div>
+							</li>
+							<li class="nav-item dropdown dropdown-large">
+
+								<a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									 <i class='bx bx-user'></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-end">
+									<a href="javascript:;">
+										<div class="msg-header">
+											<p class="msg-header-title"></p>
+											<p class="msg-header-clear ms-auto"></p>
+										</div>
+									</a>
+									<div class="header-message-list">
+
+
+									</div>
+									<a href="javascript:;">
+										<div class="text-center msg-footer"><a href="">Выход</a></div>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+</header>
+		<!--end header -->
+		<!--start page wrapper -->
+		<div class="page-wrapper" id = "reload">
+			<div class="page-content">
+				<!--breadcrumb-->
+				<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+					<div class="breadcrumb-title pe-3">Товары</div>
+					<div class="ps-3">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb mb-0 p-0">
+								<li class="breadcrumb-item"><a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+								</li>
+								<li class="breadcrumb-item active" aria-current="page">Товары Wildberries</li>
+							</ol>
+						</nav>
+					</div>
+				</div>
+				</br>
+				<button id="submit" class="btn btn-primary" role="button" data-bs-toggle="dropdown" aria-expanded="false"><div class="toFill">Обновить</div></button>
+				<button id="submit_stock" class="btn btn-primary" role="button" data-bs-toggle="dropdown" aria-expanded="false">Выгрузить остатки</button>
+ 				<button id="submit_stock_null" class="btn btn-primary" role="button" data-bs-toggle="dropdown" aria-expanded="false">Обнулить остатки</button>
+
+				<button id="out_price" class="btn btn-primary" role="button" data-bs-toggle="dropdown" aria-expanded="false">Выгрузить цены</button>
+				<button id="setting_rule_price" class="btn btn-primary" role="button" data-bs-toggle="dropdown" aria-expanded="false">Настройка ценообразования</button>
+				<div class="form-check form-switch">
+					</br></br>
+				<label for='cb' id='text1' class="control-label col-xs-3">Показать только не привязанные товары</label>
+				<input class="form-check-input" type="checkbox" autocomplete="off" name="select" id="cb" onchange='showOrHide("cb");'></div>
+				</div>
+
+				<!--end breadcrumb-->
+				</br></br>
+				<table align="center" class="table table-striped table-bordered" style="width:100%">
+					<tbody>
+						<thead>
+							<tr>
+								<th scope="col">ID_сайт</th>
+								<th scope="col">Производитель</th>
+								<th scope="col">Категории</th>
+								<th scope="col">Название</th>
+								<th scope="col">Артикул</th>
+								<th scope="col">Цена</th>
+								<th scope="col">Количество</th>
+							</tr>
+						</thead>
+						<tr>
+{% if id_item == '-' %}
+							<th><input class="userForm" type="text" id="search_id" placeholder="Поиск..." oninput="handleValueChange()"></th>
+{% else %}
+							<th><input class="userForm" type="text" value='{{ id_item }}' id="search_id" placeholder="Поиск..." oninput="handleValueChange()"></th>
+{% endif %}
+{% if brand_item == '-' %}
+							<td><input class="userForm" type="text" id="brand" placeholder="Поиск..." oninput="handleValueChange1()"></td>
+{% else %}
+							<td><input class="userForm" type="text" value='{{ brand_item }}' id="brand" placeholder="Поиск..." oninput="handleValueChange1()"></td>
+{% endif %}
+{% if section_item == '-' %}
+							<td><input class="userForm" type="text" id="section" placeholder="Поиск..." oninput="handleValueChange2()"></td>
+{% else %}
+							<td><input class="userForm" type="text" value='{{ section_item }}' id="section" placeholder="Поиск..." oninput="handleValueChange2()"></td>
+{% endif %}
+
+{% if name_item == '-' %}
+							<td><input class="userForm" type="text" id="name" placeholder="Поиск..." oninput="handleValueChange3()"></td>
+{% else %}
+							<td><input class="userForm" type="text" value='{{ name_item }}' id="name" placeholder="Поиск..." oninput="handleValueChange3()"></td>
+{% endif %}
+{% if article_item == '-' %}
+							<td><input class="userForm" type="text" id="article" placeholder="Поиск..." oninput="handleValueChange4()"></td>
+{% else %}
+							<td><input class="userForm" type="text" value='{{ article_item }}' id="article" placeholder="Поиск..." oninput="handleValueChange4()"></td>
+{% endif %}
+{% if price_item == '-' %}
+							<td><input class="userForm" type="text" id="price" placeholder="Поиск..." oninput="handleValueChange5()"></td>
+{% else %}
+							<td><input class="userForm" type="text"  value='{{ price_item }}' id="price" placeholder="Поиск..." oninput="handleValueChange5()"></td>
+{% endif %}
+{% if quantity_item == '-' %}
+							<td><input class="userForm" type="text" id="quantity" placeholder="Поиск..." oninput="handleValueChange6()"></td>
+{% else %}
+							<td><input class="userForm" type="text" value='{{ quantity_item }}' id="quantity" placeholder="Поиск..." oninput="handleValueChange6()"></td>
+{% endif %}
+						</tr>
+					</tbody>
+				</table>
+</br>
+				<button id="copy" class="btn btn-primary"> Копировать фильтр </button>
+</br></br>
+				<table align="center" id="example" class="table table-striped table-bordered" style="width:100%">
+
+									{% for d in df %}
+										<tr>
+											<td></td>
+											<th>{{ d['id_site'] }}</th>
+											<td>{{ d['brand'] }}</td>
+											<td>{{ d['section'] }}</td>
+											<td>{{ d['name'] }}</td>
+											<td>{{ d['article'] }}</td>
+											<td>{{ d['price'] }}</td>
+											<td>{{ d['quantity'] }}</td>
+											<td>{{ d['willdberis'] }}</td>
+											<td>{{ d['is_kgt'] }}</td>
+											<td></td>
+										</tr>
+									{% endfor %}
+									</tbody>
+								</table>
+			</div>
+		</div>
+			<div class="modal" id="modal1">
+				<div class="dialog">
+					<div class="row">
+						<select  class="form-control search-control" id="s_kgt">
+							<option value="Да">Да</option>
+							<option value="Нет" selected>Нет</option>
+						</select>
+						</br></br></br><button id="submit2" class="btn btn-primary" action="addRow">Сохранить</button>
+					</div>
+				</div>
+			</div>
+			<div class="modal" id="modal_stock">
+				<div class="dialog">
+					<div class="row">
+
+						</br></br></br><button id="stock" class="btn btn-primary" role="button" data-bs-toggle="dropdown" aria-expanded="false">Основной склад</button>
+				<button id="stock_kgt" class="btn btn-primary" role="button" data-bs-toggle="dropdown" aria-expanded="false">Склад КГТ</button>
+				<button id="stock_spb" class="btn btn-primary" role="button" data-bs-toggle="dropdown" aria-expanded="false">Склад СПБ</button>
+					</div>
+				</div>
+			</div>
+			<div class="modal" id="modal_null">
+				<div class="dialog">
+					<div class="row">
+						</br></br></br><button id="submit_null" class="btn btn-primary" action="addRow">Основной склад</button>
+						<button id="submit_null_spb" class="btn btn-primary" action="addRow">Склад СПБ</button>
+						<button id="submit_null_kgt" class="btn btn-primary" action="addRow">Склад КГТ</button>
+					</div>
+				</div>
+			</div>
+		<!--end page wrapper -->
+		<div class="modal" id="modal">
+			<div class="dialog">
+				<div class="row">
+					<div class="scrollbar">
+						<h6 class="mb-0 text-uppercase" id='head'>Выберите товар с сайта</h6>
+						<hr/>
+
+</br></br>
+							<input type="hidden" id="index" />
+						    <input type="hidden" id="id" />
+						    <input type="hidden" id="vendor" />
+						    <input type="hidden" id="section1" />
+						    <input type="hidden" id="name1" />
+						    <input type="hidden" id="artikul" />
+						    <input type="hidden" id="price1" />
+						    <input type="hidden" id="count" />
+						<input type="hidden" id="parent" />
+
+								<table align="center" id="example1" class="table table-striped table-bordered" style="width:100%">
+								</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--start overlay-->
+		<div class="overlay toggle-icon"></div>
+		<!--end overlay-->
+		<!--Start Back To Top Button--> <a href="javaScript:;" class="back-to-top"><i class='bx bxs-up-arrow-alt'></i></a>
+		<!--End Back To Top Button-->
+		<footer class="page-footer">
+			<p class="mb-0">Copyright © 2022. All right reserved.</p>
+		</footer>
+	</div>
+	<!--end wrapper-->
+<!-- Bootstrap JS -->
+<style>
+.scrollbar
+{
+	margin-left: 0px;
+	float: left;
+	height: 400px;
+	width: 80px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+.is-open-modal {
+	overflow: hidden;
+}
+.modal {
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 1000;
+	background: rgba(0,0,0, 0.7);
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	padding: 3rem;
+	display: none;
+}
+.modal.is-open {
+	display: block;
+}
+
+
+.dialog {
+	box-sizing: border-box;
+	width: 80%;
+	max-width: 100%;
+	background: #fff;
+	position: relative;
+	left: 55%;
+	transform: translateX(-50%);
+	border-radius: 5px;
+	padding: 2rem;
+}
+.toFill{border: dashed 0.3px blue; border-radius: 1em; display: inline-block;padding: 0.2em;}
+.userForm {
+
+    width: 130px; /*Определяем пиксельную ширину текстового поля с помощью CSS-свойств */
+
+}
+  </style>
+</style>
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" media="all" >
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--plugins-->
+	<script src="../static/js/jquery.min.js"></script>
+	<script src="../static/plugins/simplebar/js/simplebar.min.js"></script>
+	<script src="../static/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+	<script src="../static/js/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/datetime/1.1.2/js/dataTables.dateTime.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script type="text/javascript" src="https://cdn.xml4jquery.com/ajax/libs/xml4jquery/1.1.2/xml4jquery.js"></script>
+    <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
+	<script src="../static/plugins/metismenu/js/metisMenu.min.js"></script>
+	<script>
+		function showModal(id){
+		$(document.body).addClass('is-open-modal');
+		$(id).addClass('is-open');
+	}
+	function hideModals(){
+		$(document.body).removeClass('is-open-modal');
+		$('.modal').removeClass('is-open');
+	}
+
+$(document).click(function (e) {
+    if ($(e.target).is('.modal')) {
+          hideModals();
+    }
+});
+function format(q) {
+    // `d` is the original data object for the row
+    var arr = q.split('}');
+    if(arr.length == 1){
+	return 'Нет привязанных товаров';
+    }
+
+    e ='<table align="center" id="example2" class="table table-striped table-bordered" style="width:100%">'+
+									'<thead>'+
+										'<tr>'+
+											'<th scope="col">ID_сайта</th>'+
+										    '<th scope="col">Производитель</th>'+
+											'<th scope="col">Категории</th>'+
+											'<th scope="col">Название</th>'+
+											'<th scope="col">Цена</th>'+
+											'<th scope="col">Количество</th>'+
+											'<th scope="col">Количество SPB</th>'+
+											'<th scope="col">Отвязать</th>'+
+										'</tr>'+
+									'</thead>'+
+	'<tbody>' + '<tr>'
+
+    for (let i = 0; i < arr.length-1; i++) {
+	row = arr[i].split(":");
+	let r = '';
+	for (let j = 1; j < row.length; j++) {
+		r = row[j].replace('[', '').replace('{', '').replace(']', '').replace('}', '').replaceAll("'", "");
+
+		n = r.lastIndexOf(',');
+
+		if(r.length > 10 && j!=row.length-1){
+			r = r.substring(0, n);
+		}
+  		e = e+'<td>'+r+'</td>';
+	}
+	e = e + '<td><button action="delete"><i class="bx bx-trash"></i></button></td>';
+	e = e +	'</tr>';
+}
+e = e +'</tbody>'+
+	'</table>';
+
+    return (e);
+}
+
+//initialize DataTable
+const tb = $('#example').DataTable({
+  columns: [
+  	{
+                className: 'dt-control',
+                orderable: false,
+                data: null,
+                defaultContent: '',
+            },
+    {title: 'Barcode'},
+    {title: 'Производитель'},
+    {title: 'Категории'},
+    {title: 'Название'},
+    {title: 'Артикул'},
+    {title: 'Цена'},
+    {title: 'Количество'},
+    {title: ''},
+    {title: 'КГТ',
+     render: data => `${data} <button action="edit_kgt"><i class="bx bx-pencil"></i></button>`},
+    {title: 'Привязать',
+     render: data => `${data} <button action="edit"><i class="bx bx-pencil"></i></button>`},
+  ],
+        "info": true,
+        "pageLength" : 50,
+             "bJQueryUI": true,
+      "sDom": 'lrtp',
+        ordering: true,
+        searching: true,
+	paging: true,      // This shows just the table
+	order: [[ 1, 'asc' ]],
+        select: {
+            style:    'os',
+            selector: 'td:first-child'
+        },
+});
+const tb_site = $('#example1').DataTable({
+  columns:[
+    {title: "ID_сайт",
+     data: "id_site"},
+    {title: "Бренд",
+     data: "brand"},
+    {title: "Категории",
+     data: "section"},
+    {title: "Название",
+     data: "name"},
+    {title: "Цена",
+     data: "price"},
+    {title: "Количество",
+     data: "quantity"},
+    {title: "Сохранить",
+data:"-",
+     render: data => `${data} <button id=submit1 action="save"><i class="bx bx-save"></i></button>`}
+  ],
+	"processing": true,
+        "sAjaxSource": "/load_boint_items",
+ 	"bServerSide": true,
+            "ordering": true,
+             "pageLength" : 10,
+        select: {
+            style:    'os',
+            selector: 'td:first-child'
+        },
+});
+
+$('#example1').on('click', 'tbody tr button[action="save"]', function(){
+		const row = tb_site.row($(event.target).closest('tr'));
+      	$.ajax({
+            type: 'POST', // метод отправки
+            url: "/update_wildberries?item=" + $("#id").val() +'&b_item=' +row.data().id_site, // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка! Привязать товар не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            },
+	    complete: function(){
+					alert('Товар ' + $("#id").val() + ' успешно привязан к товару '+ row.data().id_site + '!');
+				}
+        });
+        tb.row($("#index").val()).child(format('{id_site:'+row.data().id_site +',name:'+row.data().name+ '}')).show();
+  	hideModals();
+});
+
+$('#submit_null').on('click', function() {
+      	$.ajax({
+            type: 'POST', // метод отправки
+            url: "/stocks_null_wildberries?sklad=8050", // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка! Запустить выгрузку не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            },
+	    complete: function(jqXHR){
+					alert('Выгрузка остатков успешно завершена! Json ответ:' + jqXHR.responseText);
+					hideModals();
+				}
+        });
+});
+$('#submit_null_kgt').on('click', function() {
+      	$.ajax({
+            type: 'POST', // метод отправки
+            url: "/stocks_null_wildberries?sklad=733984", // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка! Запустить выгрузку не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            },
+	    complete: function(jqXHR){
+					alert('Выгрузка остатков успешно завершена! Json ответ:' + jqXHR.responseText);
+					hideModals();
+				}
+        });
+});
+$('#submit_null_spb').on('click', function() {
+      	$.ajax({
+            type: 'POST', // метод отправки
+            url: "/stocks_null_wildberries?sklad=737407", // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка! Запустить выгрузку не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            },
+	    complete: function(jqXHR){
+					alert('Выгрузка остатков успешно завершена! Json ответ:' + jqXHR.responseText);
+					hideModals();
+				}
+        });
+});
+$('#stock').on('click', function() {
+      	$.ajax({
+            type: 'POST', // метод отправки
+            url: "/stocks_wildberries?sklad=8050", // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка! Запустить выгрузку не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            },
+	    complete: function(jqXHR){
+					alert('Выгрузка остатков успешно завершена! Json ответ:' + jqXHR.responseText);
+					hideModals();
+				}
+        });
+});
+$('#stock_kgt').on('click', function() {
+      	$.ajax({
+            type: 'POST', // метод отправки
+            url: "/stocks_wildberries?sklad=733984", // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка! Запустить выгрузку не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            },
+	    complete: function(jqXHR){
+					alert('Выгрузка остатков успешно завершена! Json ответ:' + jqXHR.responseText);
+					hideModals();
+				}
+        });
+});
+$('#stock_spb').on('click', function() {
+      	$.ajax({
+            type: 'POST', // метод отправки
+            url: "/stocks_wildberries?sklad=737407", // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка! Запустить выгрузку не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            },
+	    complete: function(jqXHR){
+					alert('Выгрузка остатков успешно завершена! Json ответ:' + jqXHR.responseText);
+					hideModals();
+				}
+        });
+});
+$('#submit2').on('click', function() {
+      	$.ajax({
+            type: 'POST', // метод отправки
+            url: "/kgt_wildberries?item=" + $("#id").val() + "&value=" + $("#s_kgt").val(), // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка!: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            },
+	    complete: function(jqXHR){
+					alert('Стутус КГТ успешно сохранён!');
+					tb.row($("#index").val()).data(['', $("#id").val(), $("#vendor").val(), $("#section1").val(), $("#name1").val(), $("#artikul").val(), $("#price1").val(), $("#count").val(), $("#parent").val(), $("#s_kgt").val(), '']).draw(false);
+					hideModals();
+					tb.column(8).visible(false);
+				}
+        });
+});
+$('#setting_rule_price').on('click', function() {
+window.location = "http://212.193.56.216/items/wildberries_rule"
+});
+
+$('#out_price').on('click', function() {
+      	$.ajax({
+            type: 'POST', // метод отправки
+            url: "/prices_wildberries", // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка! Запустить выгрузку не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            },
+	    complete: function(jqXHR){
+					alert('Выгрузка цен успешно завершена! Json ответ:' + jqXHR.responseText);
+				}
+        });
+});
+tb.column(8).visible(false);
+
+$('#example tbody').on('click', 'td.dt-control', function () {
+        var tr = $(this).closest('tr');
+        var row = tb.row(tr);
+
+        if (row.child.isShown()) {
+            // This row is already open - close it
+            row.child.hide();
+            tr.removeClass('shown');
+        } else {
+            // Open this row
+
+            row.child(format(row.data()[9])).show();
+            tr.addClass('shown');
+        }
+    });
+
+$("#example").DataTable().rows().every( function () {
+    var data = this.data();
+    var res = format(data[8]);
+    if(res != 'Нет привязанных товаров'){
+		this.child(res).show();
+    }
+});
+
+$('#example').on('click', 'tbody tr button[action="edit"]', function(){
+  showModal('#modal');
+  const row = tb.row($(event.target).closest('tr'));
+  $("#index").val(row.index());
+  $("#id").val(row.data()[1]);
+});
+$('#submit_stock_null').on('click', function() {
+  showModal('#modal_null');
+});
+$('#submit_stock').on('click', function() {
+  showModal('#modal_stock');
+});
+$('#example').on('click', 'tbody tr button[action="edit_kgt"]', function(){
+  showModal('#modal1');
+  const row = tb.row($(event.target).closest('tr'));
+  $("#index").val(row.index());
+  $("#id").val(row.data()[1]);
+  $("#vendor").val(row.data()[2]);
+  $("#section1").val(row.data()[3]);
+  $("#name1").val(row.data()[4]);
+  $("#artikul").val(row.data()[5]);
+  $("#price1").val(row.data()[6]);
+  $("#count").val(row.data()[7]);
+  $("#parent").val(row.data()[8]);
+});
+$('#example').on('click', 'tbody tr button[action="delete"]', function(){
+  const row = tb.row().child($(this).closest('tr'));
+
+  t =$(this).closest('tr').text().split(' ');
+  $.ajax({
+            type: 'POST', // метод отправки
+            url: "/delete_wildberries?item="+t[1], // путь к обработчику
+            error: function(data){
+                console.log(data); // выводим ошибку в консоль
+            }
+        });
+  row.remove().draw();
+
+});
+
+
+$('#submit').on('click', function() {
+  //when submit button acts to append new row to the table (default)
+	$(".toFill").html('Обновляем каталог...');
+  	$.ajax({
+  		type: 'POST', // метод отправки
+        url: "/export_wildberries_items", // путь к обработчику
+        error: function (jqXHR, exception) {
+          	alert('Ошибка! Обновление не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+        },
+		complete: function(){
+			location.reload();
+		}
+    });
+      $.ajax({
+            type: 'POST', // метод отправки
+            url: "/export_wildberries_items", // путь к обработчику
+            error: function (jqXHR, exception) {
+                alert('Ошибка! Удалить не удалось: ' + jqXHR.responseText);  // выводим ошибку в консоль
+            },
+		complete: function(){
+			location.reload();
+		}
+        });
+  });
+  handleValueChange();
+handleValueChange1();
+handleValueChange2();
+handleValueChange3();
+handleValueChange4();
+handleValueChange5();
+handleValueChange6();
+ function handleValueChange() {
+    var y = document.getElementById('search_id').value;
+    tb.column(1).search(y).draw();
+}
+  function handleValueChange1() {
+    var y = document.getElementById('brand').value;
+    tb.column(2).search(y).draw();
+}
+  function handleValueChange2() {
+    var y = document.getElementById('section').value;
+    tb.column(3).search(y).draw();
+}
+  function handleValueChange3() {
+    var y = document.getElementById('name').value;
+    tb.column(4).search(y).draw();
+}
+  function handleValueChange4() {
+    var y = document.getElementById('article').value;
+    tb.column(5).search(y).draw();
+}
+  function handleValueChange5() {
+    var y = document.getElementById('price').value;
+    tb.column(6).search(y).draw();
+}
+  function handleValueChange6() {
+    var y = document.getElementById('quantity').value;
+    tb.column(7).search(y).draw();
+}
+$('#copy').on('click', function() {
+	var y = document.getElementById('search_id').value;
+	var y1 = document.getElementById('brand').value;
+    	var y2 = document.getElementById('section').value;
+    	var y3 = document.getElementById('name').value;
+	var y4 = document.getElementById('article').value;
+	var y5 = document.getElementById('price').value;
+	var y6 = document.getElementById('quantity').value;
+    	var y7 = document.getElementById('status').value;
+	var v = 'http://212.193.56.216/wildberries_items?site={{ site }}&id_item='+y+'&brand_item='+y1+'&section_item='+y2+'&name_item='+y3+'&article_item='+y4+'&price_item='+y5+ '&quantity_item='+y6+ '&status_item='+y7;
+	var inp = document.createElement('input')
+  	inp.value = v
+  	document.body.appendChild(inp)
+  	inp.select()
+
+  if (document.execCommand('copy')) {
+    alert('Скопированно в буфер обмена!') ;
+  } else {
+    alert("Не удалось обновить");
+  }
+
+  document.body.removeChild(inp)
+;
+ });
+ function showOrHide(cb) {
+    cb = document.getElementById(cb);
+    if (cb.checked) {
+      tb.column(8).search('None').draw();
+    }
+    else {
+      tb.column(8).search('id').draw();
+    }
+  }
+	</script>
+	<!--app JS-->
+	<script src="../static/js/app.js"></script>
+</body>
+
+</html>
